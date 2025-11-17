@@ -1,0 +1,6 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="250" cy="250" r="200" fill="#e8f5e9"/>
+  <circle cx="250" cy="250" r="150" fill="#3DAB51"/>
+  <path d="M250 100 L300 200 L350 150 L300 250 L350 300 L250 350 L150 300 L200 250 L150 150 L200 200 Z" fill="white"/>
+  <text x="250" y="270" font-family="Arial" font-size="48" font-weight="bold" fill="white" text-anchor="middle">🍽️</text>
+</svg>

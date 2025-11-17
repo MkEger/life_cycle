@@ -1,0 +1,17 @@
+# Exclude Word documents
+*.docx
+*.doc
+
+# Exclude temporary files
+*.tmp
+*.swp
+*~
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Exclude editor files
+.vscode/
+.idea/
+*.sublime-*
