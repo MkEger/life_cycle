@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your FreshFood Delivery account and start ordering delicious meals today.">
+    <title>Sign Up - FreshFood Delivery</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🍃 FreshFood</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="../index.html#featured">Menu</a></li>
+                <li><a href="../index.html#how-it-works">How It Works</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Register Section -->
+    <section class="auth-container">
+        <div class="auth-card">
+            <h2>Create Your Account</h2>
+            <p class="text-center" style="color: var(--text-light); margin-bottom: 2rem;">Join FreshFood and start enjoying delicious meals</p>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="registerName" 
+                        name="name" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="registerEmail" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="registerPhone" 
+                        name="phone" 
+                        placeholder="Enter your phone number"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="registerPassword" 
+                        name="password" 
+                        placeholder="Create a password (min 6 characters)"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        id="registerConfirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; margin: 0;">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        I agree to the <a href="#" style="margin-left: 0.25rem;">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </div>
+            </form>
+            
+            <div class="form-divider">or</div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-outline" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">🔍</span> Sign up with Google
+                </button>
+                <button type="button" class="btn btn-outline" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">f</span> Sign up with Facebook
+                </button>
+            </div>
+            
+            <div class="form-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🍃 FreshFood</h3>
+                    <p>Delivering fresh, delicious meals to your doorstep since 2020. Quality food, exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="../index.html#featured">Menu</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#faq">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 support@freshfood.com</p>
+                    <p>📞 1-800-FRESH-00</p>
+                    <p>📍 123 Food Street, Culinary City, FC 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FreshFood Delivery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
