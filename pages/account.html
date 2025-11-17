@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your FreshFood Delivery account, profile, and orders.">
+    <title>My Account - FreshFood Delivery</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🍃 FreshFood</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="../index.html#featured">Menu</a></li>
+                <li><a href="../index.html#how-it-works">How It Works</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="account.html" class="btn btn-primary">My Account</a>
+            </div>
+            <button class="mobile-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Account Section -->
+    <section class="account-container">
+        <div class="account-content">
+            <!-- Sidebar -->
+            <aside class="account-sidebar">
+                <ul class="account-menu">
+                    <li><a href="#profile" class="active">Profile</a></li>
+                    <li><a href="#orders">My Orders</a></li>
+                    <li><a href="#addresses">Addresses</a></li>
+                    <li><a href="#payment">Payment Methods</a></li>
+                    <li><a href="#preferences">Preferences</a></li>
+                    <li><a href="#" onclick="logout(); return false;" style="color: #dc3545;">Logout</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="account-main">
+                <div id="profile">
+                    <div class="profile-header">
+                        <div class="profile-avatar">JD</div>
+                        <div class="profile-info">
+                            <h2>John Doe</h2>
+                            <p style="color: var(--text-light);">john.doe@example.com</p>
+                            <p style="color: var(--text-light); margin-top: 0.25rem;">Member since January 2024</p>
+                        </div>
+                    </div>
+
+                    <h3>Profile Information</h3>
+                    <form id="profileForm" style="margin-top: 1.5rem;">
+                        <div class="form-group">
+                            <label for="profileName">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="profileName" 
+                                name="name" 
+                                value="John Doe"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="profileEmail" 
+                                name="email" 
+                                value="john.doe@example.com"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profilePhone">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                id="profilePhone" 
+                                name="phone" 
+                                value="+1 (555) 123-4567"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileBio">About Me</label>
+                            <textarea 
+                                id="profileBio" 
+                                name="bio" 
+                                rows="4" 
+                                placeholder="Tell us about yourself..."
+                            >Food enthusiast who loves trying new cuisines!</textarea>
+                        </div>
+                        
+                        <div class="form-actions" style="flex-direction: row; justify-content: flex-start;">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="button" class="btn btn-outline">Cancel</button>
+                        </div>
+                    </form>
+
+                    <h3 style="margin-top: 3rem;">Change Password</h3>
+                    <form style="margin-top: 1.5rem;">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input 
+                                type="password" 
+                                id="currentPassword" 
+                                name="currentPassword" 
+                                placeholder="Enter current password"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input 
+                                type="password" 
+                                id="newPassword" 
+                                name="newPassword" 
+                                placeholder="Enter new password"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirm New Password</label>
+                            <input 
+                                type="password" 
+                                id="confirmNewPassword" 
+                                name="confirmNewPassword" 
+                                placeholder="Confirm new password"
+                            >
+                        </div>
+                        
+                        <div class="form-actions" style="flex-direction: row; justify-content: flex-start;">
+                            <button type="button" class="btn btn-primary">Update Password</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="orders" style="display: none;">
+                    <h2>My Orders</h2>
+                    <div style="margin-top: 2rem;">
+                        <div style="background-color: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div>
+                                    <h3>Order #12345</h3>
+                                    <p style="color: var(--text-light); margin: 0;">Placed on January 15, 2024</p>
+                                </div>
+                                <span style="background-color: var(--primary-green); color: var(--white); padding: 0.5rem 1rem; border-radius: 5px; font-weight: 600;">Delivered</span>
+                            </div>
+                            <p style="margin: 0.5rem 0;">2x Margherita Pizza, 1x Caesar Salad</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                                <strong style="font-size: 1.25rem; color: var(--primary-green);">$35.97</strong>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: var(--light-gray); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <div>
+                                    <h3>Order #12344</h3>
+                                    <p style="color: var(--text-light); margin: 0;">Placed on January 10, 2024</p>
+                                </div>
+                                <span style="background-color: var(--primary-green); color: var(--white); padding: 0.5rem 1rem; border-radius: 5px; font-weight: 600;">Delivered</span>
+                            </div>
+                            <p style="margin: 0.5rem 0;">1x Gourmet Burger, 1x Asian Noodles</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                                <strong style="font-size: 1.25rem; color: var(--primary-green);">$26.98</strong>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="addresses" style="display: none;">
+                    <h2>Saved Addresses</h2>
+                    <div style="margin-top: 2rem;">
+                        <p>Manage your delivery addresses here.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🍃 FreshFood</h3>
+                    <p>Delivering fresh, delicious meals to your doorstep since 2020. Quality food, exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="../index.html#featured">Menu</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#faq">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 support@freshfood.com</p>
+                    <p>📞 1-800-FRESH-00</p>
+                    <p>📍 123 Food Street, Culinary City, FC 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FreshFood Delivery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
