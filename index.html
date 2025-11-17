@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fresh, delicious meals delivered to your doorstep. Order from our wide selection of healthy and tasty dishes.">
+    <title>FreshFood Delivery - Delicious Meals at Your Doorstep</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🍃 FreshFood</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li><a href="dishes.html">Order Now</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="pages/login.html" class="btn btn-outline">Login</a>
+                <a href="pages/register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Fresh, Healthy Meals Delivered to Your Door</h1>
+                    <p>Experience the joy of restaurant-quality food from the comfort of your home. Order now and enjoy delicious, nutritious meals prepared with love.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="dishes.html" class="btn btn-primary">Order Now</a>
+                        <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-placeholder">🍔 Delicious Food</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Get your favorite meals in three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h3>Choose Your Meal</h3>
+                    <p>Browse our diverse menu and select from a wide variety of delicious, freshly prepared dishes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h3>Place Your Order</h3>
+                    <p>Add items to your cart, customize your preferences, and complete your order in seconds.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h3>Enjoy Your Food</h3>
+                    <p>Sit back and relax. Your hot, fresh meal will arrive at your doorstep in no time!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes Section -->
+    <section id="featured" class="section featured-dishes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Dishes</h2>
+                <p>Discover our most popular and delicious offerings</p>
+            </div>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <div class="dish-image">🍕</div>
+                    <div class="dish-content">
+                        <h3>Margherita Pizza</h3>
+                        <p>Classic Italian pizza with fresh mozzarella, tomatoes, and basil on a crispy crust.</p>
+                        <div class="dish-price">$12.99</div>
+                        <button class="btn btn-primary" onclick="orderNow('Margherita Pizza')">Order Now</button>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">🍔</div>
+                    <div class="dish-content">
+                        <h3>Gourmet Burger</h3>
+                        <p>Juicy beef patty with fresh vegetables, cheese, and our special sauce on a toasted bun.</p>
+                        <div class="dish-price">$14.99</div>
+                        <button class="btn btn-primary" onclick="orderNow('Gourmet Burger')">Order Now</button>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">🥗</div>
+                    <div class="dish-content">
+                        <h3>Caesar Salad</h3>
+                        <p>Crispy romaine lettuce with parmesan cheese, croutons, and creamy Caesar dressing.</p>
+                        <div class="dish-price">$9.99</div>
+                        <button class="btn btn-primary" onclick="orderNow('Caesar Salad')">Order Now</button>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">🍜</div>
+                    <div class="dish-content">
+                        <h3>Asian Noodles</h3>
+                        <p>Stir-fried noodles with fresh vegetables, protein, and authentic Asian spices.</p>
+                        <div class="dish-price">$11.99</div>
+                        <button class="btn btn-primary" onclick="orderNow('Asian Noodles')">Order Now</button>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">🌮</div>
+                    <div class="dish-content">
+                        <h3>Tacos Supreme</h3>
+                        <p>Three delicious tacos with seasoned meat, fresh salsa, and all the toppings.</p>
+                        <div class="dish-price">$10.99</div>
+                        <button class="btn btn-primary" onclick="orderNow('Tacos Supreme')">Order Now</button>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">🍰</div>
+                    <div class="dish-content">
+                        <h3>Chocolate Cake</h3>
+                        <p>Rich, moist chocolate cake with decadent frosting. Perfect for dessert lovers!</p>
+                        <div class="dish-price">$6.99</div>
+                        <button class="btn btn-primary" onclick="orderNow('Chocolate Cake')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our service</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What areas do you deliver to?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We currently deliver to all major cities and suburbs within a 20-mile radius of our kitchen locations. Enter your address during checkout to see if we deliver to your area.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does delivery take?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most deliveries arrive within 30-45 minutes of placing your order. During peak hours, delivery may take up to 60 minutes. You can track your order in real-time through our app.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), debit cards, PayPal, and Apple Pay. Payment is securely processed at checkout.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I customize my order?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can add special instructions for each dish, request no certain ingredients, or specify your spice level preferences during the ordering process.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is there a minimum order amount?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we have a minimum order amount of $15 for delivery. There's no minimum for pickup orders. Delivery fees may vary based on your location.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer vegetarian and vegan options?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We have a wide selection of vegetarian and vegan dishes clearly marked on our menu. You can also filter your search by dietary preferences to easily find suitable options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🍃 FreshFood</h3>
+                    <p>Delivering fresh, delicious meals to your doorstep since 2020. Quality food, exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="dishes.html">Order Now</a></li>
+                        <li><a href="pages/login.html">Login</a></li>
+                        <li><a href="pages/register.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 support@freshfood.com</p>
+                    <p>📞 1-800-FRESH-00</p>
+                    <p>📍 123 Food Street, Culinary City, FC 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FreshFood Delivery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
