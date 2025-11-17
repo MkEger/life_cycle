@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - FoodHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-menu">
+                <div class="logo">
+                    <a href="index.html"><h1>FoodHub</h1></a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchBtn" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon" id="cartBtn" aria-label="Shopping Cart">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 3h2l.4 2M5.4 5h11.2l-1.6 8H7.4l-2-10zm0 0L4 1M7 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm8 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="badge">0</span>
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Page Content -->
+    <main class="menu-page">
+        <div class="container">
+            <div class="menu-header">
+                <div class="menu-label">DISHES 1440</div>
+            </div>
+
+            <!-- Food Section -->
+            <section class="menu-section">
+                <h2 class="menu-category">FOOD</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/caprese-salad.jpg" alt="Caprese Salad">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Caprese Salad</h3>
+                        <p class="menu-item-price">9.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/caprese-salad-bowl.jpg" alt="Caprese Salad Bowl">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Caprese Salad</h3>
+                        <p class="menu-item-price">8.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/mediterranean-salad.jpg" alt="Mediterranean Salad">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Mediterranean Salad</h3>
+                        <p class="menu-item-price">9.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/thai-salad.jpg" alt="Thai Salad">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Thai Salad</h3>
+                        <p class="menu-item-price">9.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/veggie-wrap.jpg" alt="Veggie Wrap">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Veggie Wrap</h3>
+                        <p class="menu-item-price">7.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/falafel-wrap.jpg" alt="Falafel Wrap">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Falafel Wrap</h3>
+                        <p class="menu-item-price">8.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/spicy-tofu-wrap.jpg" alt="Spicy Tofu Wrap">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Spicy Tofu Wrap</h3>
+                        <p class="menu-item-price">8.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/beans-rice-wrap.jpg" alt="Beans & Rice Wrap">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Beans & Rice Wrap</h3>
+                        <p class="menu-item-price">7.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/eggplant-poke-bowl.jpg" alt="Eggplant Poke Bowl">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Eggplant<br>Poke Bowl</h3>
+                        <p class="menu-item-price">11.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/zucchini-poke-bowl.jpg" alt="Zucchini Poke Bowl">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Zucchini<br>Poke Bowl</h3>
+                        <p class="menu-item-price">11.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/mango-avocado-poke.jpg" alt="Mango & Avocado Poke Bowl">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Mango & Avocado<br>Poke Bowl</h3>
+                        <p class="menu-item-price">12.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/teriyaki-tofu-poke.jpg" alt="Teriyaki Tofu Poke Bowl">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Teriyaki Tofu<br>Poke Bowl</h3>
+                        <p class="menu-item-price">12.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/tomato-basil-soup.jpg" alt="Tomato & Basil Soup">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Tomato & Basil Soup</h3>
+                        <p class="menu-item-price">6.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/mushroom-soup.jpg" alt="Mushroom Soup">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Mushroom Soup</h3>
+                        <p class="menu-item-price">5.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/peas-mint-cream.jpg" alt="Peas & Mint Cream">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Peas & Mint Cream</h3>
+                        <p class="menu-item-price">5.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/sweet-potato-cream.jpg" alt="Sweet Potato Cream">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Sweet Potato Cream</h3>
+                        <p class="menu-item-price">6.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/classic-acai.jpg" alt="Classic Açaí">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Classic Açaí</h3>
+                        <p class="menu-item-price">8.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/fruity-acai.jpg" alt="Fruity Açaí">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Fruity Açaí</h3>
+                        <p class="menu-item-price">9.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/choco-berry-acai.jpg" alt="Choco-berry Açaí">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Choco-berry Açaí</h3>
+                        <p class="menu-item-price">8.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/matcha-acai.jpg" alt="Matcha Açaí">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Matcha Açaí</h3>
+                        <p class="menu-item-price">9.90 €</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drinks Section -->
+            <section class="menu-section">
+                <h2 class="menu-category">DRINKS</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/fresh-orange-juice.jpg" alt="Fresh Orange Juice">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Fresh<br>Orange Juice</h3>
+                        <p class="menu-item-price">3.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/green-power-smoothie.jpg" alt="Green Power Smoothie">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Green Power<br>Smoothie</h3>
+                        <p class="menu-item-price">5.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/berry-boost-smoothie.jpg" alt="Berry Boost Smoothie">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Berry Boost<br>Smoothie</h3>
+                        <p class="menu-item-price">5.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/tropical-glow-smoothie.jpg" alt="Tropical Glow Smoothie">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Tropical Glow<br>Smoothie</h3>
+                        <p class="menu-item-price">5.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/classic-americano.jpg" alt="Classic Americano">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Classic Americano</h3>
+                        <p class="menu-item-price">3.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/vanilla-oat-latte.jpg" alt="Vanilla Oat Latte">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Vanilla Oat Latte</h3>
+                        <p class="menu-item-price">3.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/mocha-bliss.jpg" alt="Mocha Bliss">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Mocha Bliss</h3>
+                        <p class="menu-item-price">4.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/chai-latte.jpg" alt="Chai Latte">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Chai Latte</h3>
+                        <p class="menu-item-price">3.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/herbal-tea.jpg" alt="Herbal Tea">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Herbal Tea</h3>
+                        <p class="menu-item-price">2.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/green-tea.jpg" alt="Green Tea">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Green Tea</h3>
+                        <p class="menu-item-price">2.90 €</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desserts Section -->
+            <section class="menu-section">
+                <h2 class="menu-category">DESSERTS</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/chocolate-mousse.jpg" alt="Chocolate Mousse">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Chocolate Mousse</h3>
+                        <p class="menu-item-price">5.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/tiramisu.jpg" alt="Tiramisu">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Tiramisu</h3>
+                        <p class="menu-item-price">6.50 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/panna-cotta.jpg" alt="Panna Cotta">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">Panna Cotta</h3>
+                        <p class="menu-item-price">5.90 €</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/cheesecake.jpg" alt="New York Cheesecake">
+                        </div>
+                        <button class="add-to-cart-btn" aria-label="Add to cart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 5v10M5 10h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <h3 class="menu-item-name">New York Cheesecake</h3>
+                        <p class="menu-item-price">6.90 €</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FoodHub</h3>
+                    <p>Delivering happiness, one meal at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>📧 support@foodhub.com</li>
+                        <li>📞 1-800-FOOD-HUB</li>
+                        <li>📍 123 Food Street, NY 10001</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FoodHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

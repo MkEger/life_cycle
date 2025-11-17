@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHub - Delicious Food Delivered to Your Door</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>FoodHub</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="menu.html" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-icon" id="searchBtn" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon" id="cartBtn" aria-label="Shopping Cart">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 3h2l.4 2M5.4 5h11.2l-1.6 8H7.4l-2-10zm0 0L4 1M7 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm8 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="badge">0</span>
+                    </button>
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Delicious Food<br>Delivered to Your Door</h1>
+                <p class="hero-description">Order from your favorite restaurants and get fresh, hot meals delivered quickly to your doorstep.</p>
+                <div class="hero-actions">
+                    <a href="menu.html" class="btn btn-primary btn-lg">Order Now</a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-lg">How It Works</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-food.svg" alt="Delicious food" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose FoodHub?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your food delivered within 30-45 minutes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Wide Selection</h3>
+                    <p>Choose from hundreds of restaurants and cuisines</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Easy Payment</h3>
+                    <p>Multiple payment options including cards and digital wallets</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Order Tracking</h3>
+                    <p>Track your order in real-time from kitchen to doorstep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Food</h3>
+                    <p>Browse through our menu and select your favorite dishes</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Add to Cart</h3>
+                    <p>Add items to your cart and customize as needed</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Checkout</h3>
+                    <p>Enter delivery details and choose payment method</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Enjoy Your Meal</h3>
+                    <p>Sit back and wait for your delicious food to arrive</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What are your delivery hours?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We deliver from 10:00 AM to 11:00 PM, 7 days a week. Some restaurants may have different hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept credit/debit cards, Apple Pay, Google Pay, and cash on delivery.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is there a minimum order amount?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The minimum order amount varies by restaurant, typically between $10-$15.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I track my order?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once your order is confirmed, you'll receive a tracking link via SMS and email to monitor your delivery in real-time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What if I'm not satisfied with my order?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a satisfaction guarantee. Contact our support team within 24 hours and we'll make it right.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FoodHub</h3>
+                    <p>Delivering happiness, one meal at a time.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>📧 support@foodhub.com</li>
+                        <li>📞 1-800-FOOD-HUB</li>
+                        <li>📍 123 Food Street, NY 10001</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FoodHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
