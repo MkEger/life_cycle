@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     setActiveNavLink();
     updateUserInterface();
-    
+    setActiveNavLink();
+    updateUserInterface();
+
     // Load dishes if on dishes page
     if (document.getElementById('foodGrid')) {
         loadDishesFromDB();
@@ -99,18 +101,24 @@ async function loadDishesFromDB() {
                     <p class="dish-description">${dish.description}</p>
                     <div class="dish-footer">
                         <span class="dish-price">$${price.toFixed(2)}</span>
-                        <button class="add-to-cart-btn" onclick="addToCartDB(${dish.id}, '${dish.name}', ${price})">
+                        <button class="add-to-cart-btn" data-dish-id="${dish.id}" data-dish-name="${dish.name}" data-dish-price="${price}">
                             Add to Cart
                         </button>
                     </div>
                 </div>
             `;
 
-            if (dish.category_id === 1) {
+            // ✅ Додаємо обробник події безпосередньо до кнопки
+            const addButton = card.querySelector('.add-to-cart-btn');
+            addButton.addEventListener('click', function() {
+                addToCartDB(dish.id, dish.name, price);
+            });
+
+            if (dish.category_id === 2) { // Піца
                 foodGrid.appendChild(card);
-            } else if (dish.category_id === 2) {
+            } else if (dish.category_id === 5) { // Напої
                 drinksGrid.appendChild(card);
-            } else if (dish.category_id === 3) {
+            } else if (dish.category_id === 4) { // Десерти
                 dessertsGrid.appendChild(card);
             } else {
                 console.warn('⚠️ Невідома категорія:', dish.category_id, 'для', dish.name);
@@ -127,6 +135,12 @@ async function loadDishesFromDB() {
 // ========== Cart Management ==========
 // Add item to cart (from DB)
 function addToCartDB(dishId, dishName, dishPrice) {
+    const price = parseFloat(dishPrice);
+    if (isNaN(price)) {
+        console.error('Invalid price for dish:', dishName);
+        return;
+    }
+
     const existingItem = cart.find(item => item.id === dishId);
 
     if (existingItem) {
@@ -135,7 +149,7 @@ function addToCartDB(dishId, dishName, dishPrice) {
         cart.push({
             id: dishId,
             name: dishName,
-            price: dishPrice,
+            price: price,
             quantity: 1
         });
     }
@@ -210,12 +224,22 @@ function displayCart() {
                 <div class="cart-item-price">$${item.price.toFixed(2)}</div>
             </div>
             <div class="cart-item-controls">
-                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                <button class="quantity-btn decrease-btn">-</button>
                 <span class="quantity">${item.quantity}</span>
-                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                <button class="remove-btn" onclick="removeFromCart(${item.id})">🗑️</button>
+                <button class="quantity-btn increase-btn">+</button>
+                <button class="remove-btn">🗑️</button>
             </div>
         `;
+
+        // ✅ Додаємо обробники подій безпосередньо до кнопок
+        const decreaseBtn = cartItem.querySelector('.decrease-btn');
+        const increaseBtn = cartItem.querySelector('.increase-btn');
+        const removeBtn = cartItem.querySelector('.remove-btn');
+
+        decreaseBtn.addEventListener('click', () => updateQuantity(item.id, -1));
+        increaseBtn.addEventListener('click', () => updateQuantity(item.id, 1));
+        removeBtn.addEventListener('click', () => removeFromCart(item.id));
+
         cartItems.appendChild(cartItem);
     });
 
