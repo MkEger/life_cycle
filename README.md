@@ -54,9 +54,12 @@ life_cycle/
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, Edge)
-- No build tools or dependencies required
+- Node.js (v14 or higher) for backend
+- MySQL database server
 
 ### Installation
+
+#### Frontend Only
 
 1. Clone the repository:
 ```bash
@@ -77,6 +80,44 @@ cd life_cycle
    ```
 
 3. Access the website at `http://localhost:8000` (if using a local server)
+
+#### Full Stack (Frontend + Backend)
+
+1. Clone the repository:
+```bash
+git clone https://github.com/MkEger/life_cycle.git
+cd life_cycle
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up the database:
+```bash
+# Create MySQL database and run schema
+mysql -u root -p < database/schema.sql
+```
+
+4. Configure environment variables:
+```bash
+# Copy .env.example to .env and update values
+cp .env.example .env
+# Edit .env with your database credentials
+```
+
+5. Start the backend server:
+```bash
+npm start
+# or for development with auto-reload
+npm run dev
+```
+
+6. Access the application:
+   - Frontend: Open `index.html` or `http://localhost:3000`
+   - Backend API: `http://localhost:3000/api`
+   - API Documentation: See `API_DOCUMENTATION.md`
 
 ### Usage Flow
 
@@ -114,6 +155,32 @@ cd life_cycle
 4. **Confirmation** (confirmation.html) - Order tracking
 
 ## 🔧 Technical Details
+
+### Backend Architecture
+
+**Technology Stack:**
+- Node.js with Express.js
+- MySQL database with connection pooling
+- JWT for authentication
+- bcrypt for password hashing
+- CORS enabled for cross-origin requests
+
+**Key Features:**
+- RESTful API design
+- Role-based access control (user, admin, courier)
+- Middleware for authentication and authorization
+- Comprehensive error handling
+- Database transaction support
+
+**API Endpoints:**
+- 40+ endpoints covering all features
+- Full CRUD operations for restaurants, menu items, and categories
+- Order management and tracking
+- Review and rating system
+- Cart management
+- Courier delivery system
+
+See `API_DOCUMENTATION.md` for detailed API documentation.
 
 ### Cart System
 - Stores cart items in localStorage
@@ -184,10 +251,29 @@ const dishesData = {
 
 ## 🔒 Security Notes
 
-- This is a **static frontend demo** - not production-ready
-- No real authentication or payment processing
-- All data is stored in browser localStorage
-- Implement proper backend for production use
+- **Backend Security:**
+  - Password hashing with bcrypt (10 salt rounds)
+  - JWT token authentication with 7-day expiration
+  - Role-based access control
+  - SQL injection prevention via parameterized queries
+  - User blocking functionality
+  - CORS enabled for controlled access
+
+- **Frontend Security:**
+  - This is a **static frontend demo** - not production-ready
+  - No real authentication or payment processing in frontend
+  - All data is stored in browser localStorage
+  - Implement proper backend integration for production use
+
+- **Production Considerations:**
+  - Change JWT secret key
+  - Enable HTTPS
+  - Implement rate limiting
+  - Add input validation middleware
+  - Integrate real payment gateways
+  - Implement OAuth for social login
+  - Add OTP verification for phone login
+  - Set up proper database backups
 
 ## 📱 Mobile Features
 
@@ -199,14 +285,21 @@ const dishesData = {
 ## 🚧 Future Enhancements
 
 Potential features to add:
-- Backend API integration
-- Real authentication system
-- Actual payment gateway
-- Real-time order tracking
-- User reviews and ratings
-- Restaurant partner dashboard
+- ~~Backend API integration~~ ✅ **Implemented**
+- ~~Real authentication system~~ ✅ **Implemented**
+- Real payment gateway integration (Stripe, PayPal)
+- Real-time order tracking with WebSockets
+- ~~User reviews and ratings~~ ✅ **Implemented**
+- ~~Restaurant partner dashboard~~ ✅ **Implemented via Admin**
 - Push notifications
-- Order history persistence
+- ~~Order history persistence~~ ✅ **Implemented**
+- Email notifications
+- SMS OTP verification
+- OAuth social login (Google, Facebook)
+- Advanced analytics dashboard
+- Geolocation for delivery tracking
+- Multi-language support
+- Dark mode
 
 ## 🤝 Contributing
 
