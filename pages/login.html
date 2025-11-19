@@ -126,5 +126,16 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            await loginUser(email, password);
+        });
+    </script>
 </body>
 </html>

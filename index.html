@@ -245,5 +245,26 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = getCurrentUser();
+            const nav = document.querySelector('.nav');
+
+            if (user) {
+                // Користувач увійшов
+                nav.innerHTML += `
+                <span class="nav-link">👤 ${user.name}</span>
+                <a href="#" onclick="logoutUser()" class="nav-link">Logout</a>
+            `;
+            } else {
+                // Користувач не увійшов
+                nav.innerHTML += `
+                <a href="pages/login.html" class="nav-link">Login</a>
+                <a href="pages/register.html" class="nav-link">Sign Up</a>
+            `;
+            }
+        });
+    </script>
 </body>
 </html>

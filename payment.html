@@ -27,10 +27,6 @@
                         <label for="paymentMethod">Payment Method</label>
                         <select id="paymentMethod" name="paymentMethod" required>
                             <option value="">Select payment method</option>
-                            <option value="credit">Credit Card</option>
-                            <option value="debit">Debit Card</option>
-                            <option value="paypal">PayPal</option>
-                            <option value="cash">Cash on Delivery</option>
                         </select>
                     </div>
 
@@ -78,5 +74,41 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // ✅ Завантажуємо способи оплати з БД
+            try {
+                const response = await fetch('http://localhost:3000/api/payment-methods');
+                const methods = await response.json();
+
+                const select = document.getElementById('paymentMethod');
+                methods.forEach(method => {
+                    const option = document.createElement('option');
+                    option.value = method.code;
+                    option.textContent = method.name;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Помилка завантаження способів оплати:', error);
+            }
+
+            const continueBtn = document.querySelector('.btn-primary');
+            if (continueBtn) {
+                continueBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const paymentMethod = document.getElementById('paymentMethod')?.value;
+
+                    if (!paymentMethod) {
+                        alert('Оберіть спосіб оплати!');
+                        return;
+                    }
+
+                    localStorage.setItem('payment_method', paymentMethod);
+                    window.location.href = 'address.html';
+                });
+            }
+        });
+    </script>
 </body>
 </html>

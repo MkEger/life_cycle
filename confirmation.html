@@ -88,13 +88,57 @@
 
     <script src="script.js"></script>
     <script>
-        // Generate random order number
-        document.getElementById('orderNumber').textContent = '#' + Math.floor(Math.random() * 90000 + 10000);
-        
-        // Clear cart after order confirmation
-        setTimeout(() => {
-            localStorage.removeItem('cart');
-        }, 1000);
+        document.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('orderId');
+
+            if (!orderId) {
+                alert('Номер замовлення не знайдено!');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // ✅ Оновлюємо номер замовлення
+            const orderNumberElement = document.getElementById('orderNumber');
+            if (orderNumberElement) {
+                orderNumberElement.textContent = `#${orderId}`;
+            }
+
+            try {
+                // ✅ Завантажуємо дані замовлення з БД
+                const response = await fetch(`http://localhost:3000/api/orders/${orderId}/details`);
+                const order = await response.json();
+
+                if (!response.ok) {
+                    throw new Error('Замовлення не знайдено');
+                }
+
+                // ✅ Відображаємо страви
+                const itemsContainer = document.getElementById('summaryItems');
+
+                if (itemsContainer && order.items && order.items.length > 0) {
+                    itemsContainer.innerHTML = order.items.map(item => `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>${item.name} x${item.quantity}</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `).join('');
+                } else if (itemsContainer) {
+                    itemsContainer.textContent = 'No items in order';
+                }
+
+                // ✅ Відображаємо Total Paid
+                const totalElement = document.getElementById('orderTotal');
+                if (totalElement) {
+                    totalElement.textContent = `$${parseFloat(order.total_price).toFixed(2)}`;
+                }
+
+            } catch (error) {
+                console.error('Помилка завантаження замовлення:', error);
+                alert('Не вдалося завантажити замовлення');
+            }
+        });
     </script>
+
 </body>
 </html>

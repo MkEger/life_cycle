@@ -5,6 +5,7 @@
 /* ========== CSS Variables (Color Palette) ========== */
 :root {
     --primary-green: #28a745;
+    --primary-color: #28a745;
     --dark-green: #1e7e34;
     --light-green: #d4edda;
     --accent-green: #5cb85c;
@@ -468,6 +469,11 @@ a:hover {
     color: var(--text-light);
     position: relative;
 }
+
+.user-name {
+    color: var(--primary-color);
+}
+
 
 .form-divider::before,
 .form-divider::after {
