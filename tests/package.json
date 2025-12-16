@@ -1,0 +1,39 @@
+{
+  "name": "food-delivery-tests",
+  "version": "1.0.0",
+  "description": "Comprehensive testing suite for Food Delivery System",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:unit": "jest unit --verbose",
+    "test:component": "jest component --verbose", 
+    "test:system": "jest system/simple-end-to-end.test.js --verbose",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:api": "jest api/simple-api.test.js --verbose",
+    "test:all": "npm run test:unit && npm run test:component && npm run test:system && npm run test:api"
+  },
+  "keywords": ["testing", "food-delivery", "automation"],
+  "author": "Food Delivery Team",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^23.0.0",
+    "axios": "^1.6.0",
+    "newman": "^6.0.0",
+    "@testing-library/dom": "^9.3.0",
+    "selenium-webdriver": "^4.15.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/setup.js"],
+    "testMatch": ["**/*.test.js"],
+    "collectCoverageFrom": [
+      "**/*.test.js",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": ["text", "html"],
+    "verbose": true
+  }
+}

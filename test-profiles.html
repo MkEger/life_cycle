@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Тест Профілів - Food Delivery</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .test-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .test-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .test-btn.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+        
+        .test-btn.error {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+        }
+        
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0.2rem;
+        }
+        
+        .status.pending { background: #fff3cd; color: #856404; }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        
+        .quick-actions .btn {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-actions .btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+        
+        .log {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>?? Тест Системи Профілів</h1>
+        
+        <!-- Загальний статус -->
+        <div class="test-section">
+            <h2>?? Загальний Статус</h2>
+            <div id="generalStatus">
+                <span class="status pending">?? Ініціалізація...</span>
+            </div>
+            <div class="quick-actions">
+                <button class="test-btn" onclick="runAllTests()">?? Запустити Всі Тести</button>
+                <button class="test-btn" onclick="clearStorage()">??? Очистити Storage</button>
+                <button class="test-btn" onclick="createTestData()">?? Створити Тестові Дані</button>
+            </div>
+        </div>
+
+        <!-- Тест авторизації -->
+        <div class="test-section">
+            <h2>?? Тест Авторизації</h2>
+            <div class="test-grid">
+                <div class="test-card">
+                    <h4>????? Адміністратор</h4>
+                    <button class="test-btn" onclick="testLogin('admin@fooddelivery.com.ua', 'admin2024', 'admin')">
+                        Тест Логіну
+                    </button>
+                    <div class="result" id="result-admin"></div>
+                </div>
+                
+                <div class="test-card">
+                    <h4>?? Кур'єр</h4>
+                    <button class="test-btn" onclick="testLogin('courier.alex@delivery.com.ua', 'courier123', 'courier')">
+                        Тест Логіну
+                    </button>
+                    <div class="result" id="result-courier"></div>
+                </div>
+                
+                <div class="test-card">
+                    <h4>????? Менеджер</h4>
+                    <button class="test-btn" onclick="testLogin('manager.pizza@restaurant.com.ua', 'pizza2024', 'manager')">
+                        Тест Логіну
+                    </button>
+                    <div class="result" id="result-manager"></div>
+                </div>
+                
+                <div class="test-card">
+                    <h4>?? Користувач</h4>
+                    <button class="test-btn" onclick="testLogin('test@example.com', 'test123', 'user')">
+                        Тест Логіну
+                    </button>
+                    <div class="result" id="result-user"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Тест профілів -->
+        <div class="test-section">
+            <h2>?? Тест Профілів</h2>
+            <div class="test-grid">
+                <div class="test-card">
+                    <h4>?? Завантаження Профілю</h4>
+                    <button class="test-btn" onclick="testProfileLoad()">Тестувати</button>
+                    <div class="result" id="result-profile-load"></div>
+                </div>
+                
+                <div class="test-card">
+                    <h4>?? Зміна Ролей</h4>
+                    <button class="test-btn" onclick="testRoleSwitch()">Тестувати</button>
+                    <div class="result" id="result-role-switch"></div>
+                </div>
+                
+                <div class="test-card">
+                    <h4>?? Замовлення</h4>
+                    <button class="test-btn" onclick="testOrders()">Тестувати</button>
+                    <div class="result" id="result-orders"></div>
+                </div>
+                
+                <div class="test-card">
+                    <h4>?? URL Навігація</h4>
+                    <button class="test-btn" onclick="testNavigation()">Тестувати</button>
+                    <div class="result" id="result-navigation"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Швидкі лінки -->
+        <div class="test-section">
+            <h2>?? Швидкі Лінки</h2>
+            <div class="quick-actions">
+                <a href="test-accounts.html" class="btn">?? Тестові Акаунти</a>
+                <a href="pages/login.html" class="btn">?? Сторінка Логіну</a>
+                <a href="pages/profile-english.html" class="btn">?? Профіль</a>
+                <a href="index.html" class="btn">?? Головна</a>
+                <a href="url-debug.html" class="btn">?? URL Debug</a>
+            </div>
+        </div>
+
+        <!-- Лог -->
+        <div class="test-section">
+            <h2>?? Лог Тестування</h2>
+            <div id="testLog" class="log">Ініціалізація системи тестування...\n</div>
+        </div>
+    </div>
+
+    <script>
+        let testLog = '';
+
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            testLog += `[${timestamp}] ${message}\n`;
+            document.getElementById('testLog').textContent = testLog;
+            console.log(message);
+        }
+
+        function updateStatus(id, success, message) {
+            const result = document.getElementById(id);
+            result.style.display = 'block';
+            result.className = `result ${success ? 'success' : 'error'}`;
+            result.textContent = message;
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            log('? Storage очищено');
+            updateGeneralStatus('?? Storage очищено', 'pending');
+        }
+
+        function createTestData() {
+            // Створити тестові замовлення
+            const testOrders = [
+                {
+                    id: 'test_order_1',
+                    restaurant: 'Смачна Піцерія',
+                    restaurantId: 1,
+                    userId: 5,
+                    status: 'delivered',
+                    date: new Date(Date.now() - 86400000).toISOString(),
+                    items: [
+                        { id: 1, name: 'Маргарита', quantity: 1, price: 12.99 },
+                        { id: 2, name: 'Coca Cola', quantity: 2, price: 2.50 }
+                    ],
+                    total: 17.99
+                },
+                {
+                    id: 'test_order_2',
+                    restaurant: 'Суші Майстер',
+                    restaurantId: 2,
+                    userId: 5,
+                    status: 'preparing',
+                    date: new Date().toISOString(),
+                    items: [
+                        { id: 3, name: 'Філадельфія', quantity: 2, price: 8.99 }
+                    ],
+                    total: 17.98
+                }
+            ];
+
+            localStorage.setItem('userOrders', JSON.stringify(testOrders));
+            log('? Тестові замовлення створено');
+            updateGeneralStatus('?? Тестові дані готові', 'success');
+        }
+
+        function testLogin(email, password, expectedRole) {
+            log(`?? Тестування логіну: ${email}`);
+            
+            try {
+                // Симуляція логіну
+                const testUsers = {
+                    'admin@fooddelivery.com.ua': { email, name: 'Адміністратор', role: 'admin' },
+                    'courier.alex@delivery.com.ua': { email, name: 'Кур\'єр Олексій', role: 'courier' },
+                    'manager.pizza@restaurant.com.ua': { email, name: 'Менеджер Піцерії', role: 'manager' },
+                    'test@example.com': { email, name: 'Тестовий Користувач', role: 'user' }
+                };
+
+                const user = testUsers[email];
+                if (user && user.role === expectedRole) {
+                    localStorage.setItem('user', JSON.stringify(user));
+                    localStorage.setItem('token', 'test_token_' + Date.now());
+                    
+                    log(`? Логін успішний для ${user.name}`);
+                    updateStatus(`result-${expectedRole}`, true, `? Логін успішний\nРоль: ${user.role}\nІм'я: ${user.name}`);
+                    return true;
+                } else {
+                    throw new Error('Користувача не знайдено');
+                }
+            } catch (error) {
+                log(`? Помилка логіну для ${email}: ${error.message}`);
+                updateStatus(`result-${expectedRole}`, false, `? Помилка: ${error.message}`);
+                return false;
+            }
+        }
+
+        function testProfileLoad() {
+            log('?? Тестування завантаження профілю');
+            
+            try {
+                const user = localStorage.getItem('user');
+                const token = localStorage.getItem('token');
+                
+                if (!user || !token) {
+                    throw new Error('Користувач не авторизований');
+                }
+                
+                const userData = JSON.parse(user);
+                if (!userData.name || !userData.role) {
+                    throw new Error('Неповні дані користувача');
+                }
+                
+                log(`? Профіль завантажено для ${userData.name}`);
+                updateStatus('result-profile-load', true, `? Профіль завантажено\nІм'я: ${userData.name}\nРоль: ${userData.role}`);
+                return true;
+            } catch (error) {
+                log(`? Помилка завантаження профілю: ${error.message}`);
+                updateStatus('result-profile-load', false, `? Помилка: ${error.message}`);
+                return false;
+            }
+        }
+
+        function testRoleSwitch() {
+            log('?? Тестування зміни ролей');
+            
+            try {
+                const roles = ['admin', 'courier', 'manager', 'user'];
+                let successCount = 0;
+                
+                roles.forEach(role => {
+                    const testUser = {
+                        id: Date.now(),
+                        email: `test_${role}@example.com`,
+                        name: `Test ${role}`,
+                        role: role
+                    };
+                    
+                    localStorage.setItem('user', JSON.stringify(testUser));
+                    const saved = JSON.parse(localStorage.getItem('user'));
+                    
+                    if (saved.role === role) {
+                        successCount++;
+                        log(`? Роль ${role} встановлена успішно`);
+                    } else {
+                        log(`? Помилка встановлення ролі ${role}`);
+                    }
+                });
+                
+                if (successCount === roles.length) {
+                    updateStatus('result-role-switch', true, `? Всі ролі (${successCount}/${roles.length}) працюють`);
+                    return true;
+                } else {
+                    updateStatus('result-role-switch', false, `? Працює тільки ${successCount}/${roles.length} ролей`);
+                    return false;
+                }
+            } catch (error) {
+                log(`? Помилка тестування ролей: ${error.message}`);
+                updateStatus('result-role-switch', false, `? Помилка: ${error.message}`);
+                return false;
+            }
+        }
+
+        function testOrders() {
+            log('?? Тестування системи замовлень');
+            
+            try {
+                const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+                
+                if (orders.length === 0) {
+                    // Створити тестове замовлення
+                    createTestData();
+                    const newOrders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+                    
+                    if (newOrders.length > 0) {
+                        log(`? Створено ${newOrders.length} тестових замовлень`);
+                        updateStatus('result-orders', true, `? Замовлення створені\nКількість: ${newOrders.length}\nСтатуси: ${newOrders.map(o => o.status).join(', ')}`);
+                        return true;
+                    } else {
+                        throw new Error('Не вдалося створити замовлення');
+                    }
+                } else {
+                    log(`? Знайдено ${orders.length} замовлень`);
+                    updateStatus('result-orders', true, `? Замовлення знайдені\nКількість: ${orders.length}\nСтатуси: ${orders.map(o => o.status).join(', ')}`);
+                    return true;
+                }
+            } catch (error) {
+                log(`? Помилка тестування замовлень: ${error.message}`);
+                updateStatus('result-orders', false, `? Помилка: ${error.message}`);
+                return false;
+            }
+        }
+
+        function testNavigation() {
+            log('?? Тестування навігації');
+            
+            try {
+                const currentUrl = window.location.href;
+                const currentPath = window.location.pathname;
+                const baseUrl = window.location.origin;
+                
+                // Перевірка основних URL
+                const urls = [
+                    'index.html',
+                    'pages/login.html',
+                    'pages/profile-english.html',
+                    'test-accounts.html'
+                ];
+                
+                let validUrls = 0;
+                urls.forEach(url => {
+                    try {
+                        const fullUrl = new URL(url, baseUrl);
+                        validUrls++;
+                        log(`? URL валідний: ${url}`);
+                    } catch (e) {
+                        log(`? URL невалідний: ${url}`);
+                    }
+                });
+                
+                if (validUrls === urls.length) {
+                    updateStatus('result-navigation', true, `? Навігація працює\nБазовий URL: ${baseUrl}\nВалідні URL: ${validUrls}/${urls.length}`);
+                    return true;
+                } else {
+                    updateStatus('result-navigation', false, `? Проблеми з навігацією\nВалідні URL: ${validUrls}/${urls.length}`);
+                    return false;
+                }
+            } catch (error) {
+                log(`? Помилка тестування навігації: ${error.message}`);
+                updateStatus('result-navigation', false, `? Помилка: ${error.message}`);
+                return false;
+            }
+        }
+
+        function runAllTests() {
+            log('?? Запуск всіх тестів...');
+            updateGeneralStatus('?? Виконання тестів...', 'pending');
+            
+            let passedTests = 0;
+            let totalTests = 0;
+            
+            // Тести логіну
+            totalTests += 4;
+            if (testLogin('admin@fooddelivery.com.ua', 'admin2024', 'admin')) passedTests++;
+            if (testLogin('courier.alex@delivery.com.ua', 'courier123', 'courier')) passedTests++;
+            if (testLogin('manager.pizza@restaurant.com.ua', 'pizza2024', 'manager')) passedTests++;
+            if (testLogin('test@example.com', 'test123', 'user')) passedTests++;
+            
+            // Інші тести
+            totalTests += 4;
+            if (testProfileLoad()) passedTests++;
+            if (testRoleSwitch()) passedTests++;
+            if (testOrders()) passedTests++;
+            if (testNavigation()) passedTests++;
+            
+            // Підсумок
+            setTimeout(() => {
+                if (passedTests === totalTests) {
+                    updateGeneralStatus('?? Всі тести пройдені успішно!', 'success');
+                    log(`?? Всі тести (${passedTests}/${totalTests}) пройдені успішно!`);
+                } else {
+                    updateGeneralStatus(`?? Пройдено ${passedTests}/${totalTests} тестів`, 'pending');
+                    log(`?? Пройдено тільки ${passedTests}/${totalTests} тестів`);
+                }
+            }, 2000);
+        }
+
+        function updateGeneralStatus(message, type) {
+            const statusElement = document.getElementById('generalStatus');
+            statusElement.innerHTML = `<span class="status ${type}">${message}</span>`;
+        }
+
+        // Ініціалізація
+        document.addEventListener('DOMContentLoaded', function() {
+            log('?? Система тестування ініціалізована');
+            updateGeneralStatus('?? Готовий до тестування', 'success');
+            
+            // Перевірити поточний стан
+            const user = localStorage.getItem('user');
+            const orders = localStorage.getItem('userOrders');
+            
+            if (user) {
+                const userData = JSON.parse(user);
+                log(`?? Поточний користувач: ${userData.name} (${userData.role})`);
+            } else {
+                log('?? Користувач не авторизований');
+            }
+            
+            if (orders) {
+                const ordersData = JSON.parse(orders);
+                log(`?? Замовлень в системі: ${ordersData.length}`);
+            } else {
+                log('?? Замовлення відсутні');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order System Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .test-area {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0.5rem;
+            font-weight: 600;
+        }
+        button:hover { background: #0056b3; }
+        .success { background: #28a745; }
+        .warning { background: #ffc107; color: #000; }
+        .danger { background: #dc3545; }
+        .info { background: #17a2b8; }
+        
+        .cart-item {
+            background: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .order-card {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-preparing { background: #d1ecf1; color: #0c5460; }
+        .status-delivered { background: #d4edda; color: #155724; }
+        
+        .debug-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>??? Order System Debug & Fix</h1>
+        
+        <div class="section">
+            <h3>1. Setup Test Environment</h3>
+            <p>First, let's setup a test user and initialize the cart system.</p>
+            <div class="test-area">
+                <button onclick="setupTestUser()" class="success">Setup Test User</button>
+                <button onclick="clearAllData()" class="warning">Clear All Data</button>
+                <button onclick="showDebugInfo()" class="info">Show Debug Info</button>
+            </div>
+            <div id="debugInfo" class="debug-info" style="display: none;"></div>
+        </div>
+
+        <div class="section">
+            <h3>2. Test Cart Functions</h3>
+            <p>Add items to cart and test cart functionality.</p>
+            <div class="test-area">
+                <button onclick="addTestItems()" class="success">Add Test Items to Cart</button>
+                <button onclick="showCart()">Show Cart Contents</button>
+                <button onclick="clearCart()" class="warning">Clear Cart</button>
+            </div>
+            <div id="cartDisplay" class="debug-info" style="display: none;"></div>
+        </div>
+
+        <div class="section">
+            <h3>3. Test Order Creation</h3>
+            <p>Create orders and save them to localStorage.</p>
+            <div class="test-area">
+                <button onclick="createTestOrder()" class="success">Create Test Order</button>
+                <button onclick="simulateCheckout()">Simulate Checkout Process</button>
+                <button onclick="showOrders()">Show All Orders</button>
+            </div>
+            <div id="orderDisplay"></div>
+        </div>
+
+        <div class="section">
+            <h3>4. Test Profile Integration</h3>
+            <p>Check if orders appear correctly in profile.</p>
+            <div class="test-area">
+                <button onclick="testProfileIntegration()">Test Profile Integration</button>
+                <button onclick="openProfile()" class="info">Open Profile Page</button>
+                <button onclick="openDishes()" class="info">Open Dishes Page</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>5. Fix Common Issues</h3>
+            <p>Repair common problems with the order system.</p>
+            <div class="test-area">
+                <button onclick="fixCartIssues()" class="warning">Fix Cart Issues</button>
+                <button onclick="fixOrderIssues()" class="warning">Fix Order Issues</button>
+                <button onclick="fixProfileIssues()" class="warning">Fix Profile Issues</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>6. Live Test</h3>
+            <p>Complete end-to-end test of the order system.</p>
+            <div class="test-area">
+                <button onclick="runCompleteTest()" class="success">Run Complete Test</button>
+                <button onclick="resetSystem()" class="danger">Reset Entire System</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for testing
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        let testUser = {
+            id: 'test_user_123',
+            name: 'Test User',
+            email: 'test@example.com',
+            role: 'user'
+        };
+
+        // Sample dishes for testing
+        const sampleDishes = [
+            { id: 1, name: 'Margherita Pizza', price: 12.99, restaurant_id: 1, image: 'margherita.jpg' },
+            { id: 2, name: 'Pepperoni Pizza', price: 15.99, restaurant_id: 1, image: 'pepperoni.jpg' },
+            { id: 6, name: 'Philadelphia Roll', price: 8.99, restaurant_id: 2, image: 'philadelphia.jpg' },
+            { id: 11, name: 'Classic Burger', price: 6.99, restaurant_id: 3, image: 'burger.jpg' },
+            { id: 16, name: 'Pasta Carbonara', price: 11.99, restaurant_id: 4, image: 'carbonara.jpg' }
+        ];
+
+        const restaurantNames = {
+            1: 'Tasty Pizzeria',
+            2: 'Sushi Master', 
+            3: 'Burger House',
+            4: 'Italian Garden'
+        };
+
+        // 1. Setup Functions
+        function setupTestUser() {
+            localStorage.setItem('currentUser', JSON.stringify(testUser));
+            localStorage.setItem('user', JSON.stringify(testUser));
+            showMessage('Test user created and logged in!', 'success');
+            showDebugInfo();
+        }
+
+        function clearAllData() {
+            ['cart', 'userOrders', 'currentUser', 'user', 'pendingOrder'].forEach(key => {
+                localStorage.removeItem(key);
+            });
+            cart = [];
+            showMessage('All data cleared!', 'warning');
+            showDebugInfo();
+        }
+
+        function showDebugInfo() {
+            const debugDiv = document.getElementById('debugInfo');
+            const info = {
+                cart: JSON.parse(localStorage.getItem('cart') || '[]'),
+                userOrders: JSON.parse(localStorage.getItem('userOrders') || '[]'),
+                currentUser: JSON.parse(localStorage.getItem('currentUser') || 'null'),
+                user: JSON.parse(localStorage.getItem('user') || 'null')
+            };
+            
+            debugDiv.innerHTML = JSON.stringify(info, null, 2);
+            debugDiv.style.display = 'block';
+        }
+
+        // 2. Cart Functions
+        function addTestItems() {
+            cart = [
+                { id: 1, name: 'Margherita Pizza', price: 12.99, quantity: 1, restaurant_id: 1, image: 'margherita.jpg' },
+                { id: 6, name: 'Philadelphia Roll', price: 8.99, quantity: 2, restaurant_id: 2, image: 'philadelphia.jpg' },
+                { id: 11, name: 'Classic Burger', price: 6.99, quantity: 1, restaurant_id: 3, image: 'burger.jpg' }
+            ];
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            showMessage('Test items added to cart!', 'success');
+            showCart();
+        }
+
+        function showCart() {
+            const cartDiv = document.getElementById('cartDisplay');
+            if (cart.length === 0) {
+                cartDiv.innerHTML = 'Cart is empty';
+            } else {
+                cartDiv.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <span>${item.name} (${restaurantNames[item.restaurant_id]}) x${item.quantity}</span>
+                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join('');
+            }
+            cartDiv.style.display = 'block';
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartDiv.innerHTML += `<div style="font-weight: bold; margin-top: 1rem;">Total: $${total.toFixed(2)}</div>`;
+        }
+
+        function clearCart() {
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            showMessage('Cart cleared!', 'warning');
+            showCart();
+        }
+
+        // 3. Order Functions
+        function createTestOrder() {
+            if (cart.length === 0) {
+                showMessage('Add items to cart first!', 'warning');
+                return;
+            }
+
+            const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+            if (!user) {
+                showMessage('Setup test user first!', 'warning');
+                return;
+            }
+
+            // Group items by restaurant
+            const itemsByRestaurant = cart.reduce((acc, item) => {
+                const restaurantId = item.restaurant_id || 1;
+                if (!acc[restaurantId]) {
+                    acc[restaurantId] = [];
+                }
+                acc[restaurantId].push(item);
+                return acc;
+            }, {});
+
+            // Get existing orders
+            let orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+
+            // Create orders for each restaurant
+            Object.keys(itemsByRestaurant).forEach(restaurantId => {
+                const restaurantItems = itemsByRestaurant[restaurantId];
+                const restaurantTotal = restaurantItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+                
+                const order = {
+                    id: 'order_' + Date.now() + '_' + restaurantId,
+                    restaurant: restaurantNames[restaurantId] || 'Unknown Restaurant',
+                    restaurantId: parseInt(restaurantId),
+                    items: restaurantItems.map(item => ({
+                        name: item.name,
+                        price: item.price,
+                        quantity: item.quantity,
+                        total: item.price * item.quantity
+                    })),
+                    total: restaurantTotal,
+                    status: 'pending',
+                    date: new Date().toISOString(),
+                    userId: user.id
+                };
+                
+                orders.push(order);
+            });
+
+            // Save orders
+            localStorage.setItem('userOrders', JSON.stringify(orders));
+            
+            // Clear cart
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            showMessage('Order created successfully!', 'success');
+            showOrders();
+        }
+
+        function simulateCheckout() {
+            if (cart.length === 0) {
+                addTestItems();
+            }
+            
+            setTimeout(() => {
+                createTestOrder();
+                showMessage('Checkout process completed!', 'success');
+            }, 1000);
+        }
+
+        function showOrders() {
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const orderDiv = document.getElementById('orderDisplay');
+            
+            if (orders.length === 0) {
+                orderDiv.innerHTML = '<p>No orders found</p>';
+                return;
+            }
+
+            orderDiv.innerHTML = orders.map(order => `
+                <div class="order-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <div>
+                            <h4>${order.restaurant}</h4>
+                            <p style="margin: 0; color: #666; font-size: 0.9rem;">${new Date(order.date).toLocaleDateString()}</p>
+                        </div>
+                        <span class="status-badge status-${order.status}">${order.status}</span>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem;">
+                        <strong>Items:</strong> ${order.items.map(item => `${item.name} x${item.quantity}`).join(', ')}
+                    </div>
+                    <div style="font-weight: bold; color: #28a745;">Total: $${order.total.toFixed(2)}</div>
+                </div>
+            `).join('');
+        }
+
+        // 4. Profile Integration
+        function testProfileIntegration() {
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+            
+            if (!user) {
+                showMessage('Setup test user first!', 'warning');
+                return;
+            }
+            
+            if (orders.length === 0) {
+                showMessage('Create test orders first!', 'warning');
+                return;
+            }
+            
+            showMessage(`Found ${orders.length} orders for user ${user.name}. Profile integration should work!`, 'success');
+            showOrders();
+        }
+
+        function openProfile() {
+            // Set up test environment first
+            const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+            if (!user) {
+                setupTestUser();
+            }
+            
+            window.open('pages/profile.html', '_blank');
+        }
+
+        function openDishes() {
+            window.open('dishes.html', '_blank');
+        }
+
+        // 5. Fix Functions
+        function fixCartIssues() {
+            // Ensure cart is properly initialized
+            if (!localStorage.getItem('cart')) {
+                localStorage.setItem('cart', '[]');
+            }
+            
+            // Ensure cart variable is in sync
+            cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+            // Fix any malformed cart items
+            cart = cart.filter(item => item.id && item.name && item.price && item.quantity);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            showMessage('Cart issues fixed!', 'success');
+        }
+
+        function fixOrderIssues() {
+            let orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            
+            // Fix any malformed orders
+            orders = orders.filter(order => order.id && order.restaurant && order.total);
+            
+            // Ensure all orders have required fields
+            orders = orders.map(order => ({
+                ...order,
+                status: order.status || 'pending',
+                date: order.date || new Date().toISOString(),
+                userId: order.userId || 'guest'
+            }));
+            
+            localStorage.setItem('userOrders', JSON.stringify(orders));
+            showMessage('Order issues fixed!', 'success');
+        }
+
+        function fixProfileIssues() {
+            // Ensure user data is properly set
+            const currentUser = localStorage.getItem('currentUser');
+            const user = localStorage.getItem('user');
+            
+            if (!currentUser && !user) {
+                setupTestUser();
+            } else if (currentUser && !user) {
+                localStorage.setItem('user', currentUser);
+            } else if (!currentUser && user) {
+                localStorage.setItem('currentUser', user);
+            }
+            
+            showMessage('Profile issues fixed!', 'success');
+        }
+
+        // 6. Complete Test
+        function runCompleteTest() {
+            showMessage('Starting complete test...', 'info');
+            
+            // Step 1: Setup
+            setTimeout(() => {
+                setupTestUser();
+                showMessage('? User setup complete', 'info');
+            }, 500);
+            
+            // Step 2: Add items
+            setTimeout(() => {
+                addTestItems();
+                showMessage('? Items added to cart', 'info');
+            }, 1000);
+            
+            // Step 3: Create order
+            setTimeout(() => {
+                createTestOrder();
+                showMessage('? Order created', 'info');
+            }, 1500);
+            
+            // Step 4: Test profile
+            setTimeout(() => {
+                testProfileIntegration();
+                showMessage('? Complete test finished! Check profile page.', 'success');
+            }, 2000);
+        }
+
+        function resetSystem() {
+            if (confirm('This will reset everything. Are you sure?')) {
+                localStorage.clear();
+                cart = [];
+                showMessage('System reset complete!', 'danger');
+                
+                // Hide all displays
+                document.getElementById('debugInfo').style.display = 'none';
+                document.getElementById('cartDisplay').style.display = 'none';
+                document.getElementById('orderDisplay').innerHTML = '';
+            }
+        }
+
+        // Utility function
+        function showMessage(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                background: ${type === 'success' ? '#28a745' : type === 'warning' ? '#ffc107' : type === 'danger' ? '#dc3545' : '#17a2b8'};
+                color: ${type === 'warning' ? '#000' : '#fff'};
+                border-radius: 8px;
+                z-index: 1000;
+                max-width: 400px;
+                font-weight: 600;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 4 seconds
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 4000);
+            
+            // Also log to console
+            console.log(`${type.toUpperCase()}: ${message}`);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showMessage('Order System Debug Tool loaded. Click "Setup Test User" to start.', 'info');
+            
+            // Load existing cart
+            cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\server.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:server.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\quick_setup.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\quick_setup.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\create_db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\create_db.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\test_data.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\test_data.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\js\\auth.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\auth.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\account.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\account.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\profile.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\profile.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\images\\meat.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:images\\meat.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-auth-simple.css||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles-auth-simple.css||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\quick-login-fix.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:quick-login-fix.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-login-now.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:fix-login-now.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-accounts.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\profile-english.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\profile-english.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles.css||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles.css||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\index.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\.env.example||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.env.example||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\kill-port-3000.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kill-port-3000.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup-ua.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:setup-ua.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:setup.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:setup.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\confirmation.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:confirmation.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\schema.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\schema.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\js\\script.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:js\\script.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\payment.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:payment.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\sample_data.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\sample_data.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\address.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:address.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\quick-setup.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:quick-setup.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\dishes.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dishes.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\add-test-data.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:add-test-data.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\full-setup.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:full-setup.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-fixed.css||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles-fixed.css||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\check-frontend.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:check-frontend.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-complete.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-complete.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-encoding.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:fix-encoding.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-ukrainian.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:fix-ukrainian.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-english.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-english.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\diagnose.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:diagnose.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\simple-fix.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:simple-fix.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-clean.css||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles-clean.css||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-ukrainian.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-ukrainian.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-profile.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\final-fix-test.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:final-fix-test.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\profile-success.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:profile-success.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\all-fixed.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:all-fixed.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-order-system.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-order-system.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\debug-order-system.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:debug-order-system.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\order-system-fixed.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:order-system-fixed.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-order-working.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-order-working.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-auth.css||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:styles-auth.css||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\login.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\login.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\register.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\register.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\auth-showcase.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:auth-showcase.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-accounts.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-accounts.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-passwords.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-passwords.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-passwords.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-passwords.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\url-debug.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:url-debug.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\url-debug.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:url-debug.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profiles.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-profiles.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-profiles.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:fix-profiles.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-user-display.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-user-display.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-user-fix.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-user-fix.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile-form.html||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-profile-form.html||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile-form.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test-profile-form.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "account.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\account.html",
+              "RelativeDocumentMoniker": "pages\\account.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\account.html",
+              "RelativeToolTip": "pages\\account.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T06:38:36.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "profile.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\profile.html",
+              "RelativeDocumentMoniker": "pages\\profile.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\profile.html",
+              "RelativeToolTip": "pages\\profile.html",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAOoBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T22:09:59.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "auth.js",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\js\\auth.js",
+              "RelativeDocumentMoniker": "js\\auth.js",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\js\\auth.js",
+              "RelativeToolTip": "js\\auth.js",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-02T21:10:44.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "test_data.sql",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\test_data.sql",
+              "RelativeDocumentMoniker": "database\\test_data.sql",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\test_data.sql",
+              "RelativeToolTip": "database\\test_data.sql",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-02T21:41:27.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "create_db.sql",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\create_db.sql",
+              "RelativeDocumentMoniker": "database\\create_db.sql",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\create_db.sql",
+              "RelativeToolTip": "database\\create_db.sql",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-02T21:20:37.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "quick_setup.sql",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\quick_setup.sql",
+              "RelativeDocumentMoniker": "database\\quick_setup.sql",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\quick_setup.sql",
+              "RelativeToolTip": "database\\quick_setup.sql",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-02T21:34:27.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "server.js",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\server.js",
+              "RelativeDocumentMoniker": "server.js",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\server.js",
+              "RelativeToolTip": "server.js",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAEkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-02T21:15:46.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "meat.jpg - Bitmap [600x600, 32 bit, JPG]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\images\\meat.jpg",
+              "RelativeDocumentMoniker": "images\\meat.jpg",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\images\\meat.jpg - Bitmap [600x600, 32 bit, JPG]",
+              "RelativeToolTip": "images\\meat.jpg - Bitmap [600x600, 32 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-12-03T06:22:46.186Z",
+              "EditorCaption": " - Bitmap [600x600, 32 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "quick-login-fix.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\quick-login-fix.html",
+              "RelativeDocumentMoniker": "quick-login-fix.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\quick-login-fix.html",
+              "RelativeToolTip": "quick-login-fix.html",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAADUBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:58:19.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "fix-login-now.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-login-now.bat",
+              "RelativeDocumentMoniker": "fix-login-now.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-login-now.bat",
+              "RelativeToolTip": "fix-login-now.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T00:59:20.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "test-profile-form.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile-form.html",
+              "RelativeDocumentMoniker": "test-profile-form.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile-form.html",
+              "RelativeToolTip": "test-profile-form.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T01:10:01.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "styles-auth-simple.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-auth-simple.css",
+              "RelativeDocumentMoniker": "styles-auth-simple.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-auth-simple.css",
+              "RelativeToolTip": "styles-auth-simple.css",
+              "ViewState": "AgIAAOMBAAAAAAAAAAAAAAgCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-03T00:56:47.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "test-user-fix.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-user-fix.bat",
+              "RelativeDocumentMoniker": "test-user-fix.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-user-fix.bat",
+              "RelativeToolTip": "test-user-fix.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T00:53:23.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "test-accounts.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.html",
+              "RelativeDocumentMoniker": "test-accounts.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.html",
+              "RelativeToolTip": "test-accounts.html",
+              "ViewState": "AgIAAMABAAAAAAAAAAAvwNoBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:10:52.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "test-profile-form.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile-form.bat",
+              "RelativeDocumentMoniker": "test-profile-form.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile-form.bat",
+              "RelativeToolTip": "test-profile-form.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T01:10:21.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "test-user-display.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-user-display.html",
+              "RelativeDocumentMoniker": "test-user-display.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-user-display.html",
+              "RelativeToolTip": "test-user-display.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:53:05.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "fix-profiles.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-profiles.bat",
+              "RelativeDocumentMoniker": "fix-profiles.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-profiles.bat",
+              "RelativeToolTip": "fix-profiles.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T00:42:38.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "test-profiles.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profiles.html",
+              "RelativeDocumentMoniker": "test-profiles.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profiles.html",
+              "RelativeToolTip": "test-profiles.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgCAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:42:23.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "url-debug.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\url-debug.bat",
+              "RelativeDocumentMoniker": "url-debug.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\url-debug.bat",
+              "RelativeToolTip": "url-debug.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T00:35:04.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "url-debug.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\url-debug.html",
+              "RelativeDocumentMoniker": "url-debug.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\url-debug.html",
+              "RelativeToolTip": "url-debug.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:34:54.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "test-passwords.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-passwords.bat",
+              "RelativeDocumentMoniker": "test-passwords.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-passwords.bat",
+              "RelativeToolTip": "test-passwords.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T00:28:24.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "test-passwords.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-passwords.html",
+              "RelativeDocumentMoniker": "test-passwords.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-passwords.html",
+              "RelativeToolTip": "test-passwords.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:27:54.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "test-accounts.sh",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.sh",
+              "RelativeDocumentMoniker": "test-accounts.sh",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.sh",
+              "RelativeToolTip": "test-accounts.sh",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAACAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2025-12-03T00:14:53.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "auth-showcase.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\auth-showcase.html",
+              "RelativeDocumentMoniker": "auth-showcase.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\auth-showcase.html",
+              "RelativeToolTip": "auth-showcase.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8BAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:05:58.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "register.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\register.html",
+              "RelativeDocumentMoniker": "pages\\register.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\register.html",
+              "RelativeToolTip": "pages\\register.html",
+              "ViewState": "AgIAABkCAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:04:46.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "login.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\login.html",
+              "RelativeDocumentMoniker": "pages\\login.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\login.html",
+              "RelativeToolTip": "pages\\login.html",
+              "ViewState": "AgIAAIYBAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-03T00:03:10.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAABEBAAAAAAAAAAAowAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-02T21:12:52.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "test-accounts.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.bat",
+              "RelativeDocumentMoniker": "test-accounts.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-accounts.bat",
+              "RelativeToolTip": "test-accounts.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAuAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-03T00:15:02.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "styles-auth.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-auth.css",
+              "RelativeDocumentMoniker": "styles-auth.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-auth.css",
+              "RelativeToolTip": "styles-auth.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-03T00:02:19.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "test-order-working.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-order-working.html",
+              "RelativeDocumentMoniker": "test-order-working.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-order-working.html",
+              "RelativeToolTip": "test-order-working.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcCAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:48:23.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "order-system-fixed.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\order-system-fixed.html",
+              "RelativeDocumentMoniker": "order-system-fixed.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\order-system-fixed.html",
+              "RelativeToolTip": "order-system-fixed.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:43:09.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "debug-order-system.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\debug-order-system.html",
+              "RelativeDocumentMoniker": "debug-order-system.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\debug-order-system.html",
+              "RelativeToolTip": "debug-order-system.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYCAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:40:12.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "test-order-system.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-order-system.html",
+              "RelativeDocumentMoniker": "test-order-system.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-order-system.html",
+              "RelativeToolTip": "test-order-system.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0BAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:33:06.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "all-fixed.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\all-fixed.html",
+              "RelativeDocumentMoniker": "all-fixed.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\all-fixed.html",
+              "RelativeToolTip": "all-fixed.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:26:36.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "profile-success.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\profile-success.html",
+              "RelativeDocumentMoniker": "profile-success.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\profile-success.html",
+              "RelativeToolTip": "profile-success.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:19:35.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "final-fix-test.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\final-fix-test.html",
+              "RelativeDocumentMoniker": "final-fix-test.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\final-fix-test.html",
+              "RelativeToolTip": "final-fix-test.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:14:40.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "profile-english.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\profile-english.html",
+              "RelativeDocumentMoniker": "pages\\profile-english.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\pages\\profile-english.html",
+              "RelativeToolTip": "pages\\profile-english.html",
+              "ViewState": "AgIAACoEAAAAAAAAAAAAAJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:14:19.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "test-profile.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile.html",
+              "RelativeDocumentMoniker": "test-profile.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-profile.html",
+              "RelativeToolTip": "test-profile.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:11:26.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "test-ukrainian.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-ukrainian.html",
+              "RelativeDocumentMoniker": "test-ukrainian.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-ukrainian.html",
+              "RelativeToolTip": "test-ukrainian.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T23:06:34.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "styles-clean.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-clean.css",
+              "RelativeDocumentMoniker": "styles-clean.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-clean.css",
+              "RelativeToolTip": "styles-clean.css",
+              "ViewState": "AgIAAH0EAAAAAAAAAIBJwH8EAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T23:05:16.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "simple-fix.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\simple-fix.bat",
+              "RelativeDocumentMoniker": "simple-fix.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\simple-fix.bat",
+              "RelativeToolTip": "simple-fix.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:55:47.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "test.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test.html",
+              "RelativeDocumentMoniker": "test.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test.html",
+              "RelativeToolTip": "test.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T22:54:46.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "fix-ukrainian.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-ukrainian.bat",
+              "RelativeDocumentMoniker": "fix-ukrainian.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-ukrainian.bat",
+              "RelativeToolTip": "fix-ukrainian.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:33:47.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "fix-encoding.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-encoding.bat",
+              "RelativeDocumentMoniker": "fix-encoding.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\fix-encoding.bat",
+              "RelativeToolTip": "fix-encoding.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:25:28.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "test-complete.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-complete.bat",
+              "RelativeDocumentMoniker": "test-complete.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-complete.bat",
+              "RelativeToolTip": "test-complete.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:20:01.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles.css",
+              "RelativeDocumentMoniker": "styles.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles.css",
+              "RelativeToolTip": "styles.css",
+              "ViewState": "AgIAAO8HAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T21:43:20.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "test-english.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-english.bat",
+              "RelativeDocumentMoniker": "test-english.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\test-english.bat",
+              "RelativeToolTip": "test-english.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:42:14.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAFABAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T21:46:08.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "diagnose.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\diagnose.bat",
+              "RelativeDocumentMoniker": "diagnose.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\diagnose.bat",
+              "RelativeToolTip": "diagnose.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIkAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:48:36.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "check-frontend.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\check-frontend.bat",
+              "RelativeDocumentMoniker": "check-frontend.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\check-frontend.bat",
+              "RelativeToolTip": "check-frontend.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T22:02:53.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "styles-fixed.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-fixed.css",
+              "RelativeDocumentMoniker": "styles-fixed.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\styles-fixed.css",
+              "RelativeToolTip": "styles-fixed.css",
+              "ViewState": "AgIAAGsEAAAAAAAAAIBJwG0EAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-02T21:56:23.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "add-test-data.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\add-test-data.bat",
+              "RelativeDocumentMoniker": "add-test-data.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\add-test-data.bat",
+              "RelativeToolTip": "add-test-data.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T21:43:54.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "dishes.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\dishes.html",
+              "RelativeDocumentMoniker": "dishes.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\dishes.html",
+              "RelativeToolTip": "dishes.html",
+              "ViewState": "AgIAABUCAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T21:42:21.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": ".env.example",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\.env.example",
+              "RelativeDocumentMoniker": ".env.example",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\.env.example",
+              "RelativeToolTip": ".env.example",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-02T21:11:56.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "full-setup.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\full-setup.bat",
+              "RelativeDocumentMoniker": "full-setup.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\full-setup.bat",
+              "RelativeToolTip": "full-setup.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHIAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T21:45:52.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "kill-port-3000.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\kill-port-3000.bat",
+              "RelativeDocumentMoniker": "kill-port-3000.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\kill-port-3000.bat",
+              "RelativeToolTip": "kill-port-3000.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T21:35:00.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "quick-setup.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\quick-setup.bat",
+              "RelativeDocumentMoniker": "quick-setup.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\quick-setup.bat",
+              "RelativeToolTip": "quick-setup.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T21:34:52.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "setup-ua.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup-ua.bat",
+              "RelativeDocumentMoniker": "setup-ua.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup-ua.bat",
+              "RelativeToolTip": "setup-ua.bat",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEgAAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T21:22:29.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "confirmation.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\confirmation.html",
+              "RelativeDocumentMoniker": "confirmation.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\confirmation.html",
+              "RelativeToolTip": "confirmation.html",
+              "ViewState": "AgIAABcBAAAAAAAAAAAwwAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T21:12:12.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "setup.sh",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup.sh",
+              "RelativeDocumentMoniker": "setup.sh",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup.sh",
+              "RelativeToolTip": "setup.sh",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABBAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|",
+              "WhenOpened": "2025-12-02T21:12:23.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "setup.bat",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup.bat",
+              "RelativeDocumentMoniker": "setup.bat",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\setup.bat",
+              "RelativeToolTip": "setup.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAFAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVDhPY6Aq\u002BP//P5Q1iAEjiGjt7KGKU6vLSxiZoGySgK21FVYaDkAu/PXrF1n458\u002BfYAzzJV4Xnjx5kmHixIlgGhuARSpy5OI0cMHixQy8ohIMXqGRDGzC4gxTZsyCykAAsmEEDbx06RKDla09g4aSPMPFY4cYdJUVGCyd3cDiIIDLMBDAauD\u002B/fsZuDk5GdatWcMQGRnJsGHtGgZ\u002BXl6wODbDkA3FaqCjoyPD9\u002B/fGYJDQhiWL1/OEBgcwvD921cGUWk5hpVb9zDsPngULA8CRLlQT0\u002BP4djhgwx3HjxiMLWxZ7hx/yHD1s2bGZg07Bnc3NwYXgupM5y9fI14F4JAXGwsw7uXzxk2rFzG8PnVcwZFZTUGdzVhhj33PzN4aogyPH39HqwOZBhRBoKAubk5Q15eHpiWEhVk2HXrLYOLIi/DjptvGIx0NDEMAwG8BsIUg2iQAYJvrjHs2rmTQYflPYOUiACKPAzgNBBZMQhzcHAwONlYMIR4OjFoqigwsLOzw\u002BWRAdULByhz5AAGBgBbcgKqCuq3vwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-12-02T21:12:28.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "sample_data.sql",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\sample_data.sql",
+              "RelativeDocumentMoniker": "database\\sample_data.sql",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\sample_data.sql",
+              "RelativeToolTip": "database\\sample_data.sql",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-02T21:11:27.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "schema.sql",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\schema.sql",
+              "RelativeDocumentMoniker": "database\\schema.sql",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\database\\schema.sql",
+              "RelativeToolTip": "database\\schema.sql",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-02T21:11:14.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "address.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\address.html",
+              "RelativeDocumentMoniker": "address.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\address.html",
+              "RelativeToolTip": "address.html",
+              "ViewState": "AgIAAFcAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T21:11:48.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "payment.html",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\payment.html",
+              "RelativeDocumentMoniker": "payment.html",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\payment.html",
+              "RelativeToolTip": "payment.html",
+              "ViewState": "AgIAAJ0BAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-02T21:11:05.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\js\\script.js",
+              "RelativeDocumentMoniker": "js\\script.js",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\js\\script.js",
+              "RelativeToolTip": "js\\script.js",
+              "ViewState": "AgIAAI8CAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-02T21:10:17.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\MkEger\\life_cycle\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAABQAAAAAAAAAAABBwBgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-02T21:09:05.125Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

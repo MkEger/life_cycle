@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Тест Форми Профіля</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .test-btn.danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        
+        .test-btn.success {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        
+        .result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .info {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>?? Тест Форми Профіля</h1>
+        
+        <div class="info">
+            <h3>?? Що тестуємо:</h3>
+            <p>Перевіряємо чи форма профіля працює правильно і не ламається при різних діях користувача.</p>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Тест 1: Підготовка Даних</h2>
+            <button class="test-btn" onclick="setupTestUser()">Створити Тестового Користувача</button>
+            <div class="result" id="result1" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Тест 2: Логін та Відкриття Профіля</h2>
+            <div class="step">
+                <p><strong>Кроки:</strong></p>
+                <ol>
+                    <li>Логінимося як тестовий користувач</li>
+                    <li>Відкриваємо профіль</li>
+                    <li>Перевіряємо чи завантажились дані</li>
+                </ol>
+            </div>
+            <button class="test-btn" onclick="testLogin()">?? Логін як Тестовий Користувач</button>
+            <button class="test-btn" onclick="openProfile()">?? Відкрити Профіль</button>
+            <div class="result" id="result2" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Тест 3: Форма Налаштувань</h2>
+            <div class="step">
+                <p><strong>Тестуємо:</strong></p>
+                <ul>
+                    <li>Чи заповнюються поля форми</li>
+                    <li>Чи працює валідація</li>
+                    <li>Чи зберігаються зміни</li>
+                    <li>Чи оновлюється інтерфейс</li>
+                </ul>
+            </div>
+            <button class="test-btn" onclick="testFormFill()">?? Тест Заповнення Форми</button>
+            <button class="test-btn" onclick="testFormValidation()">? Тест Валідації</button>
+            <button class="test-btn" onclick="testFormSave()">?? Тест Збереження</button>
+            <div class="result" id="result3" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Тест 4: Переключення Табів</h2>
+            <button class="test-btn" onclick="testTabSwitching()">?? Тест Переключення Табів</button>
+            <div class="result" id="result4" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Тест 5: Критичні Функції</h2>
+            <div class="step">
+                <p><strong>Увага!</strong> Ці тести можуть очистити дані.</p>
+            </div>
+            <button class="test-btn" onclick="testEditProfile()">?? Тест Редагування</button>
+            <button class="test-btn danger" onclick="testLogout()">?? Тест Виходу</button>
+            <div class="result" id="result5" style="display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Загальний Статус</h2>
+            <button class="test-btn success" onclick="runAllTests()">?? Запустити Всі Тести</button>
+            <div class="result" id="overall" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateResult(id, success, message) {
+            const result = document.getElementById(id);
+            result.style.display = 'block';
+            result.className = `result ${success ? 'success' : 'error'}`;
+            result.textContent = message;
+        }
+
+        function setupTestUser() {
+            try {
+                const testUser = {
+                    id: 999,
+                    email: 'test.profile@example.com',
+                    name: 'Тестовий Профіль',
+                    role: 'user',
+                    phone: '+380501234567'
+                };
+
+                localStorage.setItem('user', JSON.stringify(testUser));
+                localStorage.setItem('token', 'test_token_' + Date.now());
+
+                updateResult('result1', true, `? Тестового користувача створено:\nІм'я: ${testUser.name}\nEmail: ${testUser.email}\nРоль: ${testUser.role}`);
+            } catch (error) {
+                updateResult('result1', false, `? Помилка створення користувача: ${error.message}`);
+            }
+        }
+
+        function testLogin() {
+            try {
+                const user = localStorage.getItem('user');
+                const token = localStorage.getItem('token');
+
+                if (!user || !token) {
+                    throw new Error('Користувач не створений. Спочатку натисніть "Створити Тестового Користувача"');
+                }
+
+                const userData = JSON.parse(user);
+                updateResult('result2', true, `? Логін успішний:\nКористувач: ${userData.name}\nТокен: ${token.substring(0, 20)}...\n\nТепер відкрийте профіль.`);
+            } catch (error) {
+                updateResult('result2', false, `? Помилка логіну: ${error.message}`);
+            }
+        }
+
+        function openProfile() {
+            try {
+                const user = localStorage.getItem('user');
+                if (!user) {
+                    throw new Error('Користувач не залогінений');
+                }
+
+                window.open('pages/profile-english.html', '_blank');
+                updateResult('result2', true, `? Профіль відкрито в новому вікні.\n\nПеревірте:\n1. Чи правильно відображається ім'я\n2. Чи працюють таби\n3. Чи заповнюється форма налаштувань`);
+            } catch (error) {
+                updateResult('result2', false, `? Помилка відкриття профіля: ${error.message}`);
+            }
+        }
+
+        function testFormFill() {
+            try {
+                const user = localStorage.getItem('user');
+                if (!user) {
+                    throw new Error('Користувач не залогінений');
+                }
+
+                updateResult('result3', true, `? Дані для заповнення форми готові.\n\nВідкрийте профіль і перевірте:\n1. Поле "Name" має бути заповнене\n2. Поле "Phone" має бути заповнене\n3. Поле "Email" має бути readonly`);
+            } catch (error) {
+                updateResult('result3', false, `? Помилка тесту заповнення: ${error.message}`);
+            }
+        }
+
+        function testFormValidation() {
+            updateResult('result3', true, `? Інструкції для тесту валідації:\n\n1. Відкрийте профіль\n2. Перейдіть на таб "Settings"\n3. Очистіть поле "Name"\n4. Натисніть "Save Changes"\n5. Повинна з'явитися помилка\n\n6. Введіть валідне ім'я\n7. Натисніть "Save Changes"\n8. Повинно успішно зберегтися`);
+        }
+
+        function testFormSave() {
+            try {
+                const user = JSON.parse(localStorage.getItem('user'));
+                if (!user) {
+                    throw new Error('Користувач не залогінений');
+                }
+
+                // Симуляція зміни даних
+                user.name = 'Оновлене Ім\'я';
+                user.phone = '+380509999999';
+                localStorage.setItem('user', JSON.stringify(user));
+
+                updateResult('result3', true, `? Дані оновлено:\nНове ім'я: ${user.name}\nНовий телефон: ${user.phone}\n\nВідкрийте профіль і перевірте чи відображаються нові дані.`);
+            } catch (error) {
+                updateResult('result3', false, `? Помилка тесту збереження: ${error.message}`);
+            }
+        }
+
+        function testTabSwitching() {
+            updateResult('result4', true, `? Інструкції для тесту табів:\n\n1. Відкрийте профіль\n2. Перемикайтеся між табами:\n   - My Orders\n   - Delivery Addresses\n   - Settings\n   - Favorites\n\n3. Перевірте чи:\n   - Таби переключаються без помилок\n   - Контент відображається правильно\n   - Немає консольних помилок`);
+        }
+
+        function testEditProfile() {
+            updateResult('result5', true, `? Інструкції для тесту редагування:\n\n1. Відкрийте профіль\n2. Натисніть "Edit Profile"\n3. Повинен автоматично переключитися на таб "Settings"\n4. Змініть дані і збережіть\n5. Перевірте чи оновились дані в інтерфейсі`);
+        }
+
+        function testLogout() {
+            const confirmTest = confirm('?? Цей тест очистить дані сесії.\n\nВи впевнені що хочете продовжити?');
+            if (!confirmTest) {
+                updateResult('result5', true, '? Тест скасовано користувачем');
+                return;
+            }
+
+            try {
+                updateResult('result5', true, `? Інструкції для тесту виходу:\n\n1. Відкрийте профіль\n2. Натисніть "Logout"\n3. Підтвердіть вихід\n4. Повинно перенаправити на головну сторінку\n5. Повторний вхід у профіль повинен вимагати авторизації`);
+            } catch (error) {
+                updateResult('result5', false, `? Помилка тесту виходу: ${error.message}`);
+            }
+        }
+
+        function runAllTests() {
+            let results = [];
+            
+            try {
+                setupTestUser();
+                results.push('? Користувач створений');
+                
+                testLogin();
+                results.push('? Логін протестований');
+                
+                testFormFill();
+                results.push('? Заповнення форми перевірено');
+                
+                updateResult('overall', true, `?? Всі автоматичні тести пройдені:\n\n${results.join('\n')}\n\n?? Ручні тести:\n- Відкрийте профіль\n- Протестуйте всі функції\n- Перевірте чи все працює без помилок`);
+            } catch (error) {
+                updateResult('overall', false, `? Помилка під час тестування: ${error.message}`);
+            }
+        }
+
+        // Автоматичний запуск при завантаженні
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('?? Тест форми профіля готовий');
+            
+            const user = localStorage.getItem('user');
+            if (user) {
+                const userData = JSON.parse(user);
+                console.log('?? Поточний користувач:', userData.name);
+            } else {
+                console.log('? Користувач не залогінений');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? URL Діагностика - Food Delivery</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-box h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+        
+        .url-test {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .result {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>?? URL Діагностика</h1>
+        
+        <div class="info-box">
+            <h3>?? Поточна інформація</h3>
+            <div id="currentInfo"></div>
+        </div>
+        
+        <div class="info-box">
+            <h3>?? Тести URL</h3>
+            
+            <div class="url-test">
+                <h4>Тест з кореня сайту:</h4>
+                <button class="btn" onclick="testUrl('pages/profile-english.html')">
+                    pages/profile-english.html
+                </button>
+                <button class="btn" onclick="testUrl('index.html')">
+                    index.html
+                </button>
+            </div>
+            
+            <div class="url-test">
+                <h4>Тест з папки pages:</h4>
+                <button class="btn" onclick="testUrl('profile-english.html')">
+                    profile-english.html
+                </button>
+                <button class="btn" onclick="testUrl('../index.html')">
+                    ../index.html
+                </button>
+            </div>
+            
+            <div class="url-test">
+                <h4>Швидкі тести логіну:</h4>
+                <button class="btn" onclick="quickTestLogin()">
+                    ?? Тест Логіну
+                </button>
+                <button class="btn" onclick="clearStorage()">
+                    ??? Очистити Storage
+                </button>
+            </div>
+        </div>
+        
+        <div class="result" id="result"></div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="test-accounts.html" class="btn">?? Тестові Акаунти</a>
+            <a href="pages/login.html" class="btn">?? Логін</a>
+            <a href="index.html" class="btn">?? Головна</a>
+        </div>
+    </div>
+
+    <script>
+        function updateCurrentInfo() {
+            const info = document.getElementById('currentInfo');
+            const currentPath = window.location.pathname;
+            const currentHost = window.location.host;
+            const currentOrigin = window.location.origin;
+            const isInPages = currentPath.includes('/pages/');
+            
+            info.innerHTML = `
+                <strong>?? Host:</strong> ${currentHost}<br>
+                <strong>?? Path:</strong> ${currentPath}<br>
+                <strong>?? Full URL:</strong> ${window.location.href}<br>
+                <strong>?? In Pages folder:</strong> ${isInPages ? 'Так' : 'Ні'}<br>
+                <strong>??? Origin:</strong> ${currentOrigin}
+            `;
+        }
+        
+        function testUrl(url) {
+            const result = document.getElementById('result');
+            const fullUrl = new URL(url, window.location.href).href;
+            
+            result.textContent = `?? Тестування URL: ${url}
+?? Повний URL: ${fullUrl}
+?? Поточний шлях: ${window.location.pathname}
+?? Результат: ${checkUrlValidity(fullUrl)}`;
+            
+            // Спробувати перейти
+            setTimeout(() => {
+                if (confirm(`Перейти на ${fullUrl}?`)) {
+                    window.location.href = url;
+                }
+            }, 100);
+        }
+        
+        function checkUrlValidity(url) {
+            try {
+                const urlObj = new URL(url);
+                return `? Валідний URL`;
+            } catch (e) {
+                return `? Невалідний URL: ${e.message}`;
+            }
+        }
+        
+        function quickTestLogin() {
+            // Симуляція логіну
+            const testUser = {
+                id: 1,
+                email: 'test@example.com',
+                name: 'Test User',
+                role: 'admin'
+            };
+            
+            localStorage.setItem('user', JSON.stringify(testUser));
+            localStorage.setItem('token', 'demo_token_' + Date.now());
+            
+            const result = document.getElementById('result');
+            result.textContent = `? Логін симульовано
+?? Користувач: ${testUser.name}
+?? Роль: ${testUser.role}
+??? Збережено в localStorage`;
+            
+            // Тест перенаправлення
+            setTimeout(() => {
+                if (confirm('Тестувати перенаправлення на профіль?')) {
+                    const currentPath = window.location.pathname;
+                    const isInPages = currentPath.includes('/pages/');
+                    const profileUrl = isInPages ? 'profile-english.html' : 'pages/profile-english.html';
+                    window.location.href = profileUrl + '?role=admin';
+                }
+            }, 1000);
+        }
+        
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            const result = document.getElementById('result');
+            result.textContent = `??? Storage очищено
+? localStorage очищено
+? sessionStorage очищено`;
+        }
+        
+        // Оновити інформацію при завантаженні
+        document.addEventListener('DOMContentLoaded', updateCurrentInfo);
+    </script>
+</body>
+</html>

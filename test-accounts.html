@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Тестові Акаунти - Food Delivery</title>
+    <link rel="stylesheet" href="styles-auth-simple.css">
+</head>
+<body>
+    <div class="container">
+        <div class="showcase">
+            <h1>?? Тестові Акаунти Food Delivery</h1>
+            <p style="text-align: center; font-size: 1.1rem; color: #6c757d; margin-bottom: 2rem;">
+                Використовуйте ці акаунти для тестування різних ролей та функцій системи
+            </p>
+
+            <div class="login-links">
+                <a href="pages/login.html">?? Сторінка Логіну</a>
+                <a href="pages/register.html">?? Сторінка Реєстрації</a>
+                <a href="index.html">?? Головна Сторінка</a>
+            </div>
+
+            <div class="accounts-grid">
+                <!-- Адміністратор -->
+                <div class="account-card">
+                    <div class="role-badge role-admin">????? Адміністратор</div>
+                    <h3>??? Головний Адміністратор</h3>
+                    
+                    <div class="credentials">
+                        <div class="label">?? Email:</div>
+                        <div class="value">
+                            admin@fooddelivery.com.ua
+                            <button class="copy-btn" onclick="copyToClipboard('admin@fooddelivery.com.ua')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Пароль:</div>
+                        <div class="value">
+                            admin2024
+                            <button class="copy-btn" onclick="copyToClipboard('admin2024')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Телефон:</div>
+                        <div class="value">+380 50 111 11 11</div>
+                        
+                        <div class="label">?? Ім'я:</div>
+                        <div class="value">Адміністратор Системи</div>
+                    </div>
+                    
+                    <div class="permissions">
+                        <h4>?? Дозволи:</h4>
+                        <ul>
+                            <li>Управління користувачами</li>
+                            <li>Управління ресторанами</li>
+                            <li>Перегляд всіх замовлень</li>
+                            <li>Налаштування системи</li>
+                            <li>Фінансові звіти</li>
+                            <li>Модерація контенту</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="quick-login-btn" onclick="quickLogin('admin@fooddelivery.com.ua', 'admin2024', 'admin')">
+                        ?? Швидкий Вхід
+                    </button>
+                </div>
+
+                <!-- Кур'єр 1 -->
+                <div class="account-card">
+                    <div class="role-badge role-courier">?? Кур'єр</div>
+                    <h3>?? Олексій Доставкін</h3>
+                    
+                    <div class="credentials">
+                        <div class="label">?? Email:</div>
+                        <div class="value">
+                            courier.alex@delivery.com.ua
+                            <button class="copy-btn" onclick="copyToClipboard('courier.alex@delivery.com.ua')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Пароль:</div>
+                        <div class="value">
+                            courier123
+                            <button class="copy-btn" onclick="copyToClipboard('courier123')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Телефон:</div>
+                        <div class="value">+380 67 555 01 01</div>
+                        
+                        <div class="label">?? Транспорт:</div>
+                        <div class="value">Мотоцикл Honda</div>
+                    </div>
+                    
+                    <div class="permissions">
+                        <h4>?? Дозволи:</h4>
+                        <ul>
+                            <li>Перегляд призначених замовлень</li>
+                            <li>Зміна статусу доставки</li>
+                            <li>Навігація до клієнта</li>
+                            <li>Зв'язок з клієнтами</li>
+                            <li>Звіти про доставку</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="quick-login-btn" onclick="quickLogin('courier.alex@delivery.com.ua', 'courier123', 'courier')">
+                        ?? Швидкий Вхід
+                    </button>
+                </div>
+
+                <!-- Кур'єр 2 -->
+                <div class="account-card">
+                    <div class="role-badge role-courier">?? Кур'єр</div>
+                    <h3>????? Марія Швидкова</h3>
+                    
+                    <div class="credentials">
+                        <div class="label">?? Email:</div>
+                        <div class="value">
+                            maria.courier@delivery.com.ua
+                            <button class="copy-btn" onclick="copyToClipboard('maria.courier@delivery.com.ua')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Пароль:</div>
+                        <div class="value">
+                            maria2024
+                            <button class="copy-btn" onclick="copyToClipboard('maria2024')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Телефон:</div>
+                        <div class="value">+380 95 777 02 02</div>
+                        
+                        <div class="label">?? Транспорт:</div>
+                        <div class="value">Електровелосипед</div>
+                    </div>
+                    
+                    <div class="permissions">
+                        <h4>?? Дозволи:</h4>
+                        <ul>
+                            <li>Перегляд призначених замовлень</li>
+                            <li>Зміна статусу доставки</li>
+                            <li>Чат з клієнтами</li>
+                            <li>GPS трекінг</li>
+                            <li>Фото підтвердження</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="quick-login-btn" onclick="quickLogin('maria.courier@delivery.com.ua', 'maria2024', 'courier')">
+                        ?? Швидкий Вхід
+                    </button>
+                </div>
+
+                <!-- Менеджер Ресторану -->
+                <div class="account-card">
+                    <div class="role-badge role-manager">????? Менеджер</div>
+                    <h3>?? Менеджер "Смачна Піцерія"</h3>
+                    
+                    <div class="credentials">
+                        <div class="label">?? Email:</div>
+                        <div class="value">
+                            manager.pizza@restaurant.com.ua
+                            <button class="copy-btn" onclick="copyToClipboard('manager.pizza@restaurant.com.ua')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Пароль:</div>
+                        <div class="value">
+                            pizza2024
+                            <button class="copy-btn" onclick="copyToClipboard('pizza2024')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Телефон:</div>
+                        <div class="value">+380 44 123 45 67</div>
+                        
+                        <div class="label">?? Ресторан:</div>
+                        <div class="value">Смачна Піцерія</div>
+                    </div>
+                    
+                    <div class="permissions">
+                        <h4>?? Дозволи:</h4>
+                        <ul>
+                            <li>Управління меню ресторану</li>
+                            <li>Перегляд замовлень ресторану</li>
+                            <li>Зміна статусу приготування</li>
+                            <li>Управління цінами</li>
+                            <li>Звіти по ресторану</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="quick-login-btn" onclick="quickLogin('manager.pizza@restaurant.com.ua', 'pizza2024', 'manager')">
+                        ?? Швидкий Вхід
+                    </button>
+                </div>
+
+                <!-- Звичайний користувач -->
+                <div class="account-card">
+                    <div class="role-badge role-user">?? Клієнт</div>
+                    <h3>????? Тестовий Користувач</h3>
+                    
+                    <div class="credentials">
+                        <div class="label">?? Email:</div>
+                        <div class="value">
+                            test@example.com
+                            <button class="copy-btn" onclick="copyToClipboard('test@example.com')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Пароль:</div>
+                        <div class="value">
+                            test123
+                            <button class="copy-btn" onclick="copyToClipboard('test123')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Телефон:</div>
+                        <div class="value">+380 50 123 45 67</div>
+                        
+                        <div class="label">?? Ім'я:</div>
+                        <div class="value">Тестовий Користувач</div>
+                    </div>
+                    
+                    <div class="permissions">
+                        <h4>?? Можливості:</h4>
+                        <ul>
+                            <li>Замовлення їжі</li>
+                            <li>Перегляд історії замовлень</li>
+                            <li>Управління адресами</li>
+                            <li>Програма лояльності</li>
+                            <li>Відгуки та рейтинги</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="quick-login-btn" onclick="quickLogin('test@example.com', 'test123', 'user')">
+                        ?? Швидкий Вхід
+                    </button>
+                </div>
+
+                <!-- VIP Клієнт -->
+                <div class="account-card">
+                    <div class="role-badge role-user" style="background: linear-gradient(135deg, #fd79a8, #fdcb6e);">? VIP Клієнт</div>
+                    <h3>?? Віктор Гурман</h3>
+                    
+                    <div class="credentials">
+                        <div class="label">?? Email:</div>
+                        <div class="value">
+                            vip.client@foodlover.com.ua
+                            <button class="copy-btn" onclick="copyToClipboard('vip.client@foodlover.com.ua')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Пароль:</div>
+                        <div class="value">
+                            vip2024
+                            <button class="copy-btn" onclick="copyToClipboard('vip2024')">??</button>
+                        </div>
+                        
+                        <div class="label">?? Телефон:</div>
+                        <div class="value">+380 50 999 88 77</div>
+                        
+                        <div class="label">? Статус:</div>
+                        <div class="value">VIP Клієнт (Gold)</div>
+                    </div>
+                    
+                    <div class="permissions">
+                        <h4>?? VIP Переваги:</h4>
+                        <ul>
+                            <li>Пріоритетна доставка</li>
+                            <li>Знижки до 20%</li>
+                            <li>Персональний менеджер</li>
+                            <li>Безкоштовна доставка</li>
+                            <li>Ексклюзивне меню</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="quick-login-btn" onclick="quickLogin('vip.client@foodlover.com.ua', 'vip2024', 'vip')">
+                        ?? Швидкий Вхід
+                    </button>
+                </div>
+            </div>
+
+            <!-- Додаткова інформація -->
+            <div style="background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 15px; margin-top: 2rem;">
+                <h2>?? Інформація для розробників</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div>
+                        <h4>?? Налаштування системи:</h4>
+                        <ul>
+                            <li>Всі паролі зашифровані</li>
+                            <li>JWT токени для сесій</li>
+                            <li>Валідація на frontend та backend</li>
+                            <li>Захищені маршрути за ролями</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>?? Тестування ролей:</h4>
+                        <ul>
+                            <li>Admin: повний доступ</li>
+                            <li>Manager: управління рестораном</li>
+                            <li>Courier: доставка замовлень</li>
+                            <li>User/VIP: замовлення їжі</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>??? Безпека:</h4>
+                        <ul>
+                            <li>Хешування паролів (bcrypt)</li>
+                            <li>Захист від SQL ін'єкцій</li>
+                            <li>CORS налаштування</li>
+                            <li>Rate limiting для API</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" style="position: fixed; top: 20px; right: 20px; padding: 15px 20px; background: #10b981; color: white; border-radius: 8px; transform: translateX(400px); transition: transform 0.3s ease; z-index: 1000; display: none;">
+    </div>
+
+    <script>
+        // Функція копіювання в буфер обміну
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification(`?? Скопійовано: ${text}`, 'success');
+            }).catch(() => {
+                // Fallback для старих браузерів
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification(`?? Скопійовано: ${text}`, 'success');
+            });
+        }
+
+        // Функція швидкого логіну
+        function quickLogin(email, password, role) {
+            console.log('?? Спроба швидкого логіну:', email, role);
+            
+            try {
+                // Спрощені тестові користувачі
+                const users = {
+                    'admin@fooddelivery.com.ua': {
+                        id: 1,
+                        email: 'admin@fooddelivery.com.ua',
+                        name: 'Адміністратор Системи',
+                        role: 'admin',
+                        phone: '+380501111111'
+                    },
+                    'courier.alex@delivery.com.ua': {
+                        id: 2,
+                        email: 'courier.alex@delivery.com.ua',
+                        name: 'Олексій Доставкін',
+                        role: 'courier',
+                        phone: '+380675550101'
+                    },
+                    'maria.courier@delivery.com.ua': {
+                        id: 3,
+                        email: 'maria.courier@delivery.com.ua',
+                        name: 'Марія Швидкова',
+                        role: 'courier',
+                        phone: '+380957770202'
+                    },
+                    'manager.pizza@restaurant.com.ua': {
+                        id: 4,
+                        email: 'manager.pizza@restaurant.com.ua',
+                        name: 'Менеджер Піцерії',
+                        role: 'manager',
+                        phone: '+380441234567'
+                    },
+                    'test@example.com': {
+                        id: 5,
+                        email: 'test@example.com',
+                        name: 'Тестовий Користувач',
+                        role: 'user',
+                        phone: '+380501234567'
+                    },
+                    'vip.client@foodlover.com.ua': {
+                        id: 6,
+                        email: 'vip.client@foodlover.com.ua',
+                        name: 'Віктор Гурман',
+                        role: 'vip',
+                        phone: '+380509998877'
+                    }
+                };
+
+                // Спрощені паролі
+                const passwords = {
+                    'admin@fooddelivery.com.ua': 'admin2024',
+                    'courier.alex@delivery.com.ua': 'courier123', 
+                    'maria.courier@delivery.com.ua': 'maria2024',
+                    'manager.pizza@restaurant.com.ua': 'pizza2024',
+                    'test@example.com': 'test123',
+                    'vip.client@foodlover.com.ua': 'vip2024'
+                };
+
+                const user = users[email];
+                const correctPassword = passwords[email];
+                
+                console.log('?? Користувач:', user);
+                console.log('?? Пароль правильний:', password === correctPassword);
+                
+                if (user && password === correctPassword) {
+                    // Очистити попередні дані
+                    localStorage.removeItem('user');
+                    localStorage.removeItem('token');
+                    
+                    // Зберегти нові дані
+                    localStorage.setItem('user', JSON.stringify(user));
+                    localStorage.setItem('token', 'demo_token_' + Date.now());
+                    
+                    console.log('? Дані збережено в localStorage');
+                    
+                    showNotification(`? Увійшли як ${user.name} (${user.role})`, 'success');
+                    
+                    setTimeout(() => {
+                        // Простіше перенаправлення
+                        if (user.role === 'admin' || user.role === 'courier' || user.role === 'manager') {
+                            console.log('?? Перенаправляю на профіль для ролі:', user.role);
+                            window.location.href = `pages/profile-english.html?role=${user.role}`;
+                        } else {
+                            console.log('?? Перенаправляю на головну сторінку');
+                            window.location.href = 'index.html';
+                        }
+                    }, 1500);
+                } else {
+                    console.error('? Невірні дані для входу');
+                    showNotification('? Невірний email або пароль', 'error');
+                }
+            } catch (error) {
+                console.error('? Помилка логіну:', error);
+                showNotification('? Помилка входу: ' + error.message, 'error');
+            }
+        }
+
+        // Функція показу повідомлень
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.background = type === 'error' ? '#ef4444' : '#10b981';
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 300);
+            }, 3000);
+        }
+
+        // Анімації завантаження
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('?? test-accounts.html завантажено');
+            
+            const cards = document.querySelectorAll('.account-card');
+            console.log('?? Знайдено карток:', cards.length);
+            
+            // Простіша анімація без лагів
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+            
+            // Початковий стиль для карток
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>

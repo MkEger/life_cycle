@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order System Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .test-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .test-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .secondary {
+            background: #6c757d;
+        }
+        
+        .secondary:hover {
+            background: #5a6268;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            color: #0066cc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid #b3d7ff;
+        }
+        
+        .results {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Order Management System Test</h1>
+        
+        <div class="info-box">
+            <h3>System Overview:</h3>
+            <ul>
+                <li><strong>Profile:</strong> Clean design without emojis</li>
+                <li><strong>Orders:</strong> Real order system using localStorage</li>
+                <li><strong>Integration:</strong> Orders from dishes.html appear in profile</li>
+                <li><strong>Features:</strong> Order again, cancel orders, view details</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>1. Test Order Creation</h3>
+            <p>Add test orders to see them in profile</p>
+            <div class="test-actions">
+                <button onclick="createTestOrder()">Create Test Order</button>
+                <button onclick="clearOrders()" class="secondary">Clear All Orders</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>2. Navigation Tests</h3>
+            <p>Test navigation between pages</p>
+            <div class="test-actions">
+                <button onclick="goToProfile()">Open Profile</button>
+                <button onclick="goToDishes()">Open Menu</button>
+                <button onclick="goToHome()" class="secondary">Go to Home</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>3. Order Status</h3>
+            <p>Check current orders in localStorage</p>
+            <div class="test-actions">
+                <button onclick="showOrderStatus()">Show Order Status</button>
+                <button onclick="simulateOrderProgress()">Simulate Order Progress</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>4. User Authentication</h3>
+            <p>Set up test user for orders</p>
+            <div class="test-actions">
+                <button onclick="setupTestUser()">Setup Test User</button>
+                <button onclick="clearUserData()" class="secondary">Clear User Data</button>
+            </div>
+        </div>
+        
+        <div id="results" class="results" style="display: none;">
+            <h4>Test Results:</h4>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        function createTestOrder() {
+            // Get existing orders
+            let orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            
+            // Create test orders
+            const testOrders = [
+                {
+                    id: 'test_' + Date.now() + '_1',
+                    restaurant: 'Tasty Pizzeria',
+                    restaurantId: 1,
+                    items: [
+                        { name: 'Margherita', price: 12.99, quantity: 1, total: 12.99 },
+                        { name: 'Pepperoni', price: 15.99, quantity: 1, total: 15.99 }
+                    ],
+                    total: 28.98,
+                    status: 'pending',
+                    date: new Date().toISOString(),
+                    userId: 'test_user'
+                },
+                {
+                    id: 'test_' + Date.now() + '_2',
+                    restaurant: 'Sushi Master',
+                    restaurantId: 2,
+                    items: [
+                        { name: 'Philadelphia Roll', price: 8.99, quantity: 2, total: 17.98 },
+                        { name: 'California Roll', price: 7.99, quantity: 1, total: 7.99 }
+                    ],
+                    total: 25.97,
+                    status: 'preparing',
+                    date: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(), // Yesterday
+                    userId: 'test_user'
+                },
+                {
+                    id: 'test_' + Date.now() + '_3',
+                    restaurant: 'Burger House',
+                    restaurantId: 3,
+                    items: [
+                        { name: 'Classic Burger', price: 6.99, quantity: 1, total: 6.99 },
+                        { name: 'French Fries', price: 3.99, quantity: 1, total: 3.99 }
+                    ],
+                    total: 10.98,
+                    status: 'delivered',
+                    date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
+                    userId: 'test_user'
+                }
+            ];
+            
+            // Add test orders to existing orders
+            orders.push(...testOrders);
+            
+            // Save to localStorage
+            localStorage.setItem('userOrders', JSON.stringify(orders));
+            
+            showResults(`Created ${testOrders.length} test orders. Total orders: ${orders.length}`);
+        }
+        
+        function clearOrders() {
+            localStorage.removeItem('userOrders');
+            showResults('All orders cleared from localStorage');
+        }
+        
+        function showOrderStatus() {
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            
+            if (orders.length === 0) {
+                showResults('No orders found in localStorage');
+                return;
+            }
+            
+            const statusSummary = orders.reduce((acc, order) => {
+                acc[order.status] = (acc[order.status] || 0) + 1;
+                return acc;
+            }, {});
+            
+            const resultHTML = `
+                <p><strong>Total Orders:</strong> ${orders.length}</p>
+                <p><strong>Status Summary:</strong></p>
+                <ul>
+                    ${Object.entries(statusSummary).map(([status, count]) => 
+                        `<li>${status}: ${count} orders</li>`
+                    ).join('')}
+                </ul>
+                <p><strong>Recent Orders:</strong></p>
+                <ul>
+                    ${orders.slice(-3).map(order => 
+                        `<li>${order.restaurant} - $${order.total.toFixed(2)} - ${order.status}</li>`
+                    ).join('')}
+                </ul>
+            `;
+            
+            showResults(resultHTML);
+        }
+        
+        function simulateOrderProgress() {
+            let orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            
+            if (orders.length === 0) {
+                showResults('No orders to update. Create test orders first.');
+                return;
+            }
+            
+            // Update order statuses
+            orders.forEach(order => {
+                if (order.status === 'pending') {
+                    order.status = 'preparing';
+                } else if (order.status === 'preparing') {
+                    order.status = 'delivering';
+                } else if (order.status === 'delivering') {
+                    order.status = 'delivered';
+                }
+            });
+            
+            localStorage.setItem('userOrders', JSON.stringify(orders));
+            showResults('Order statuses updated. Check profile to see changes.');
+        }
+        
+        function setupTestUser() {
+            const testUser = {
+                id: 'test_user',
+                name: 'Daria',
+                email: 'likekannievwestt@gmail.com',
+                role: 'user'
+            };
+            
+            localStorage.setItem('currentUser', JSON.stringify(testUser));
+            showResults('Test user created and logged in');
+        }
+        
+        function clearUserData() {
+            localStorage.removeItem('currentUser');
+            localStorage.removeItem('userOrders');
+            localStorage.removeItem('cart');
+            showResults('All user data cleared');
+        }
+        
+        function goToProfile() {
+            window.location.href = 'pages/profile.html';
+        }
+        
+        function goToDishes() {
+            window.location.href = 'dishes.html';
+        }
+        
+        function goToHome() {
+            window.location.href = 'index.html';
+        }
+        
+        function showResults(content) {
+            const resultsDiv = document.getElementById('results');
+            const resultContent = document.getElementById('resultContent');
+            
+            resultContent.innerHTML = content;
+            resultsDiv.style.display = 'block';
+            
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                resultsDiv.style.display = 'none';
+            }, 10000);
+        }
+        
+        // Auto-setup on load
+        window.addEventListener('load', () => {
+            console.log('Order System Test loaded');
+            
+            // Check current state
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+            
+            console.log('Current orders:', orders.length);
+            console.log('Current user:', user);
+            
+            if (!user) {
+                showResults('No user logged in. Click "Setup Test User" to create a test user.');
+            }
+        });
+    </script>
+</body>
+</html>

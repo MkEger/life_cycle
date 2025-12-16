@@ -1,0 +1,216 @@
+{
+    "info": {
+        "name": "Food Delivery API Tests",
+        "description": "Comprehensive API testing for Food Delivery System",
+        "version": "1.0.0"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "item": [
+                {
+                    "name": "GET Health Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/health",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "health"]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test('Status code is 200', function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "",
+                                    "pm.test('Response has correct structure', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData).to.have.property('status');",
+                                    "    pm.expect(jsonData).to.have.property('timestamp');",
+                                    "    pm.expect(jsonData).to.have.property('server');",
+                                    "});",
+                                    "",
+                                    "pm.test('Health status is OK', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData.status).to.eql('OK');",
+                                    "});",
+                                    "",
+                                    "pm.test('Response time is acceptable', function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Orders",
+            "item": [
+                {
+                    "name": "GET User Orders",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/orders/user",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "orders", "user"]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test('Status code is 200', function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "",
+                                    "pm.test('Response is JSON array', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData).to.be.an('array');",
+                                    "});",
+                                    "",
+                                    "pm.test('Orders have required properties', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    if (jsonData.length > 0) {",
+                                    "        const order = jsonData[0];",
+                                    "        pm.expect(order).to.have.property('id');",
+                                    "        pm.expect(order).to.have.property('restaurant_name');",
+                                    "        pm.expect(order).to.have.property('items');",
+                                    "        pm.expect(order).to.have.property('total');",
+                                    "        pm.expect(order).to.have.property('status');",
+                                    "        pm.expect(order).to.have.property('created_at');",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    "pm.test('Order items have correct structure', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    if (jsonData.length > 0) {",
+                                    "        const order = jsonData[0];",
+                                    "        pm.expect(order.items).to.be.an('array');",
+                                    "        if (order.items.length > 0) {",
+                                    "            const item = order.items[0];",
+                                    "            pm.expect(item).to.have.property('name');",
+                                    "            pm.expect(item).to.have.property('quantity');",
+                                    "            pm.expect(item).to.have.property('price');",
+                                    "        }",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    "pm.test('Valid order statuses', function () {",
+                                    "    const validStatuses = ['pending', 'confirmed', 'preparing', 'ready', 'delivering', 'delivered', 'cancelled'];",
+                                    "    const jsonData = pm.response.json();",
+                                    "    jsonData.forEach(order => {",
+                                    "        pm.expect(validStatuses).to.include(order.status);",
+                                    "    });",
+                                    "});",
+                                    "",
+                                    "pm.test('Response time is acceptable', function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Test Endpoint",
+            "item": [
+                {
+                    "name": "GET Test",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/test",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "test"]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test('Status code is 200', function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "",
+                                    "pm.test('Response has test message', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData).to.have.property('message');",
+                                    "    pm.expect(jsonData.message).to.include('working');",
+                                    "});",
+                                    "",
+                                    "pm.test('Response has timestamp', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData).to.have.property('timestamp');",
+                                    "    const timestamp = new Date(jsonData.timestamp);",
+                                    "    pm.expect(timestamp).to.be.a('date');",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Error Handling",
+            "item": [
+                {
+                    "name": "GET Non-existent Endpoint",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/nonexistent",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["api", "nonexistent"]
+                        }
+                    },
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test('Status code is 404', function () {",
+                                    "    pm.response.to.have.status(404);",
+                                    "});",
+                                    "",
+                                    "pm.test('Response has error message', function () {",
+                                    "    const jsonData = pm.response.json();",
+                                    "    pm.expect(jsonData).to.have.property('error');",
+                                    "    pm.expect(jsonData.error).to.include('not found');",
+                                    "});"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000",
+            "type": "string"
+        }
+    ]
+}

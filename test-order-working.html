@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Тест Системи Замовлень</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .dish-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+        
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0056b3;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .cart-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .order-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .status-pending { color: #ffc107; }
+        .status-preparing { color: #17a2b8; }
+        .status-delivered { color: #28a745; }
+        .status-cancelled { color: #dc3545; }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: #28a745;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        #notification.show {
+            transform: translateX(0);
+        }
+        
+        #notification.error {
+            background: #dc3545;
+        }
+        
+        #notification.warning {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        #notification.info {
+            background: #17a2b8;
+        }
+        
+        .cart-count {
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .results {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>?? Тест Системи Замовлень</h1>
+        
+        <!-- Cart Info -->
+        <div class="cart-info">
+            <strong>?? Кошик:</strong>
+            <span id="cartCount">0</span> товарів
+            <span id="cartTotal">$0.00</span>
+            <button class="btn btn-success" onclick="viewCart()" style="margin-left: 15px;">Переглянути кошик</button>
+            <button class="btn btn-danger" onclick="clearAllCart()" style="margin-left: 10px;">Очистити</button>
+        </div>
+        
+        <!-- Test Dishes -->
+        <div class="section">
+            <h3>?? Тестові Страви</h3>
+            
+            <div class="dish-card">
+                <div>
+                    <strong>Маргарита</strong><br>
+                    <small>Класична піца з томатами та моцарелою</small><br>
+                    <strong>$12.99</strong>
+                </div>
+                <button class="btn" onclick="addTestDish(1, 'Маргарита', 12.99)">+ Додати</button>
+            </div>
+            
+            <div class="dish-card">
+                <div>
+                    <strong>Філадельфія</strong><br>
+                    <small>Рол з лососем та крем-сиром</small><br>
+                    <strong>$8.99</strong>
+                </div>
+                <button class="btn" onclick="addTestDish(2, 'Філадельфія', 8.99)">+ Додати</button>
+            </div>
+            
+            <div class="dish-card">
+                <div>
+                    <strong>Класік Бургер</strong><br>
+                    <small>Яловичина, сир, салат, помідор</small><br>
+                    <strong>$6.99</strong>
+                </div>
+                <button class="btn" onclick="addTestDish(3, 'Класік Бургер', 6.99)">+ Додати</button>
+            </div>
+        </div>
+        
+        <!-- Cart Display -->
+        <div class="section">
+            <h3>?? Поточний Кошик</h3>
+            <div id="cartDisplay">
+                <p>Кошик порожній</p>
+            </div>
+        </div>
+        
+        <!-- Order Actions -->
+        <div class="section">
+            <h3>?? Дії з Замовленням</h3>
+            <button class="btn btn-success" onclick="createTestOrder()">Створити тестове замовлення</button>
+            <button class="btn" onclick="viewOrders()">Переглянути замовлення</button>
+            <button class="btn btn-danger" onclick="clearOrderHistory()">Очистити історію</button>
+        </div>
+        
+        <!-- Orders Display -->
+        <div class="section">
+            <h3>?? Історія Замовлень</h3>
+            <div id="ordersDisplay">
+                <p>Замовлень немає</p>
+            </div>
+        </div>
+        
+        <!-- Test Results -->
+        <div class="section">
+            <h3>?? Результати Тестів</h3>
+            <div id="testResults"></div>
+            <button class="btn" onclick="runAllTests()">Запустити всі тести</button>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div id="notification" style="display: none;"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Mock user for testing
+        localStorage.setItem('user', JSON.stringify({
+            id: 1,
+            name: 'Test User',
+            email: 'test@example.com'
+        }));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('?? Ініціалізація тесту системи замовлень');
+            updateCartDisplay();
+            updateOrdersDisplay();
+            runAllTests();
+        });
+
+        function addTestDish(id, name, price) {
+            console.log(`??? Додавання тестової страви: ${name}`);
+            
+            if (typeof addToCartDB === 'function') {
+                addToCartDB(id, name, price);
+            } else if (typeof addToCart === 'function') {
+                addToCart(id, name, price);
+            } else {
+                // Fallback implementation
+                if (!window.cart) {
+                    window.cart = [];
+                }
+                
+                const existingItem = window.cart.find(item => item.id === id);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    window.cart.push({
+                        id: id,
+                        name: name,
+                        price: price,
+                        quantity: 1,
+                        restaurant_id: 1
+                    });
+                }
+                
+                localStorage.setItem('cart', JSON.stringify(window.cart));
+                showNotification(`${name} додано до кошика!`, 'success');
+            }
+            
+            setTimeout(updateCartDisplay, 100);
+        }
+
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const cartDisplay = document.getElementById('cartDisplay');
+            
+            if (cart.length === 0) {
+                cartDisplay.innerHTML = '<p>Кошик порожній</p>';
+                cartCount.textContent = '0';
+                cartTotal.textContent = '$0.00';
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            
+            cartDisplay.innerHTML = cart.map(item => `
+                <div class="dish-card">
+                    <div>
+                        <strong>${item.name}</strong><br>
+                        <small>$${item.price} x ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}</small>
+                    </div>
+                    <button class="btn btn-danger" onclick="removeFromCart(${item.id})">Видалити</button>
+                </div>
+            `).join('');
+        }
+
+        function viewCart() {
+            updateCartDisplay();
+            showNotification('Кошик оновлено', 'info');
+        }
+
+        function clearAllCart() {
+            if (confirm('Очистити весь кошик?')) {
+                window.cart = [];
+                localStorage.setItem('cart', JSON.stringify([]));
+                updateCartDisplay();
+                showNotification('Кошик очищено', 'success');
+            }
+        }
+
+        function removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            cart = cart.filter(item => item.id !== id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.cart = cart;
+            updateCartDisplay();
+            showNotification('Товар видалено з кошика', 'success');
+        }
+
+        function createTestOrder() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+            if (cart.length === 0) {
+                showNotification('Спочатку додайте товари до кошика!', 'warning');
+                return;
+            }
+            
+            // Create order
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const newOrder = {
+                id: 'order_' + Date.now(),
+                restaurant: 'Test Restaurant',
+                restaurantId: 1,
+                items: cart.map(item => ({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity,
+                    total: item.price * item.quantity
+                })),
+                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+                status: 'pending',
+                date: new Date().toISOString(),
+                userId: 1
+            };
+            
+            orders.push(newOrder);
+            localStorage.setItem('userOrders', JSON.stringify(orders));
+            
+            // Clear cart
+            window.cart = [];
+            localStorage.setItem('cart', JSON.stringify([]));
+            
+            updateCartDisplay();
+            updateOrdersDisplay();
+            showNotification('Замовлення створено успішно!', 'success');
+        }
+
+        function updateOrdersDisplay() {
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const ordersDisplay = document.getElementById('ordersDisplay');
+            
+            if (orders.length === 0) {
+                ordersDisplay.innerHTML = '<p>Замовлень немає</p>';
+                return;
+            }
+            
+            ordersDisplay.innerHTML = orders.map(order => `
+                <div class="order-card">
+                    <div>
+                        <strong>${order.restaurant}</strong>
+                        <span class="status-${order.status}"> - ${getStatusText(order.status)}</span><br>
+                        <small>Замовлення #${order.id}</small><br>
+                        <small>Дата: ${new Date(order.date).toLocaleString()}</small><br>
+                        <strong>Загалом: $${order.total.toFixed(2)}</strong>
+                    </div>
+                    <div>
+                        <button class="btn" onclick="reorderFromHistory('${order.id}')">Замовити знову</button>
+                        <button class="btn btn-danger" onclick="cancelOrderTest('${order.id}')">Скасувати</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'pending': 'Очікує',
+                'preparing': 'Готується',
+                'delivering': 'В дорозі',
+                'delivered': 'Доставлено',
+                'cancelled': 'Скасовано'
+            };
+            return statusMap[status] || status;
+        }
+
+        function reorderFromHistory(orderId) {
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const order = orders.find(o => o.id === orderId);
+            
+            if (order) {
+                let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                
+                order.items.forEach(orderItem => {
+                    const existingItem = cart.find(cartItem => cartItem.id === orderItem.id);
+                    if (existingItem) {
+                        existingItem.quantity += orderItem.quantity;
+                    } else {
+                        cart.push({
+                            id: orderItem.id,
+                            name: orderItem.name,
+                            price: orderItem.price,
+                            quantity: orderItem.quantity,
+                            restaurant_id: order.restaurantId || 1
+                        });
+                    }
+                });
+                
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.cart = cart;
+                updateCartDisplay();
+                showNotification(`Додано ${order.items.length} товарів з попереднього замовлення`, 'success');
+            }
+        }
+
+        function cancelOrderTest(orderId) {
+            if (confirm('Скасувати це замовлення?')) {
+                let orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+                const orderIndex = orders.findIndex(o => o.id === orderId);
+                
+                if (orderIndex !== -1) {
+                    orders[orderIndex].status = 'cancelled';
+                    localStorage.setItem('userOrders', JSON.stringify(orders));
+                    updateOrdersDisplay();
+                    showNotification('Замовлення скасовано', 'success');
+                }
+            }
+        }
+
+        function viewOrders() {
+            updateOrdersDisplay();
+            showNotification('Історія замовлень оновлена', 'info');
+        }
+
+        function clearOrderHistory() {
+            if (confirm('Очистити всю історію замовлень?')) {
+                localStorage.setItem('userOrders', JSON.stringify([]));
+                updateOrdersDisplay();
+                showNotification('Історію замовлень очищено', 'success');
+            }
+        }
+
+        // Test functions
+        function runAllTests() {
+            const results = [];
+            
+            // Test 1: Cart functionality
+            results.push(testCartFunctionality());
+            
+            // Test 2: Order creation
+            results.push(testOrderCreation());
+            
+            // Test 3: LocalStorage
+            results.push(testLocalStorage());
+            
+            // Test 4: Reorder functionality
+            results.push(testReorderFunctionality());
+            
+            displayTestResults(results);
+        }
+
+        function testCartFunctionality() {
+            try {
+                // Clear cart
+                window.cart = [];
+                localStorage.setItem('cart', JSON.stringify([]));
+                
+                // Add item
+                addTestDish(999, 'Test Dish', 10.00);
+                
+                // Check if added
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                
+                if (cart.length === 1 && cart[0].name === 'Test Dish') {
+                    return { test: 'Cart Functionality', result: '? Passed', details: 'Товари додаються до кошика правильно' };
+                } else {
+                    return { test: 'Cart Functionality', result: '? Failed', details: 'Помилка додавання до кошика' };
+                }
+            } catch (error) {
+                return { test: 'Cart Functionality', result: '? Error', details: error.message };
+            }
+        }
+
+        function testOrderCreation() {
+            try {
+                // Clear orders
+                localStorage.setItem('userOrders', JSON.stringify([]));
+                
+                // Add item to cart
+                window.cart = [{id: 1, name: 'Test Order', price: 15.00, quantity: 1, restaurant_id: 1}];
+                localStorage.setItem('cart', JSON.stringify(window.cart));
+                
+                // Create order
+                createTestOrder();
+                
+                // Check order
+                const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+                
+                if (orders.length === 1 && orders[0].items[0].name === 'Test Order') {
+                    return { test: 'Order Creation', result: '? Passed', details: 'Замовлення створюються правильно' };
+                } else {
+                    return { test: 'Order Creation', result: '? Failed', details: 'Помилка створення замовлення' };
+                }
+            } catch (error) {
+                return { test: 'Order Creation', result: '? Error', details: error.message };
+            }
+        }
+
+        function testLocalStorage() {
+            try {
+                const testData = { test: 'data', timestamp: Date.now() };
+                localStorage.setItem('test', JSON.stringify(testData));
+                const retrieved = JSON.parse(localStorage.getItem('test'));
+                
+                if (retrieved && retrieved.test === 'data') {
+                    localStorage.removeItem('test');
+                    return { test: 'LocalStorage', result: '? Passed', details: 'LocalStorage працює коректно' };
+                } else {
+                    return { test: 'LocalStorage', result: '? Failed', details: 'Проблема з LocalStorage' };
+                }
+            } catch (error) {
+                return { test: 'LocalStorage', result: '? Error', details: error.message };
+            }
+        }
+
+        function testReorderFunctionality() {
+            try {
+                // Create test order
+                const testOrder = {
+                    id: 'test_reorder',
+                    items: [{id: 1, name: 'Reorder Test', price: 5.00, quantity: 2}],
+                    restaurantId: 1
+                };
+                
+                localStorage.setItem('userOrders', JSON.stringify([testOrder]));
+                
+                // Clear cart
+                window.cart = [];
+                localStorage.setItem('cart', JSON.stringify([]));
+                
+                // Reorder
+                reorderFromHistory('test_reorder');
+                
+                // Check cart
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                
+                if (cart.length === 1 && cart[0].name === 'Reorder Test') {
+                    return { test: 'Reorder Functionality', result: '? Passed', details: 'Повторне замовлення працює' };
+                } else {
+                    return { test: 'Reorder Functionality', result: '? Failed', details: 'Помилка повторного замовлення' };
+                }
+            } catch (error) {
+                return { test: 'Reorder Functionality', result: '? Error', details: error.message };
+            }
+        }
+
+        function displayTestResults(results) {
+            const container = document.getElementById('testResults');
+            
+            container.innerHTML = results.map(result => `
+                <div class="results">
+                    <strong>${result.test}:</strong> ${result.result}<br>
+                    <small>${result.details}</small>
+                </div>
+            `).join('');
+            
+            const passedTests = results.filter(r => r.result.includes('Passed')).length;
+            const totalTests = results.length;
+            
+            showNotification(`Тести завершено: ${passedTests}/${totalTests} пройдено`, 'info');
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = type;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
