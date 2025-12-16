@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Test - Ukrainian Text</title>
+    <link rel="stylesheet" href="styles-clean.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>?? Тест Українського Тексту</h1>
+        
+        <div class="test-section success">
+            <h2>? Якщо ви бачите цей текст нормально - проблему виправлено!</h2>
+            <p><strong>Назви ресторанів:</strong></p>
+            <ul>
+                <li>?? Смачна Піцерія</li>
+                <li>?? Суші Майстер</li>
+                <li>?? Burger House</li>
+                <li>?? Італійський дворик</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h3>?? Тестові символи:</h3>
+            <p>Українські літери: А, Б, В, Г, Д, Е, Є, Ж, З, И, І, Ї, Й, К, Л, М, Н, О, П, Р, С, Т, У, Ф, Х, Ц, Ч, Ш, Щ, Ь, Ю, Я</p>
+            <p>Спеціальні символи: ', ", -, —, №, %, $, €</p>
+            <p>Емодзі: ??????????????????????</p>
+        </div>
+
+        <div class="test-section">
+            <h3>?? Симуляція замовлення:</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div class="order-card" style="flex: 1; min-width: 250px; border: 1px solid #e9ecef; padding: 1rem; border-radius: 8px;">
+                    <h4>?? Смачна Піцерія</h4>
+                    <p><strong>Страви:</strong> Маргарита x1, Пепероні x1</p>
+                    <p><strong>Сума:</strong> $28.98</p>
+                    <span class="status-delivered" style="padding: 0.25rem 0.5rem; background: #d4edda; color: #155724; border-radius: 12px; font-size: 0.8rem;">? Доставлено</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>?? Інструкції:</h3>
+            <ol>
+                <li>Якщо замість українського тексту ви бачите ромбики (?) або знаки питання (?) - проблема з кодуванням</li>
+                <li>Якщо текст відображається нормально - проблему виправлено</li>
+                <li>Спробуйте відкрити: <a href="pages/profile.html">pages/profile.html</a></li>
+                <li>Увійдіть з test@example.com / test123</li>
+                <li>Перевірте вкладку "Мої Замовлення"</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <button onclick="testProfile()" class="btn btn-primary">?? Відкрити Профіль</button>
+            <button onclick="testResults()" class="btn btn-secondary">?? Показати Результати</button>
+        </div>
+
+        <div id="results" style="margin-top: 1rem;"></div>
+    </div>
+
+    <script>
+        function testProfile() {
+            // Save test user to localStorage
+            const testUser = {
+                id: 1,
+                name: 'Daria',
+                email: 'likekannievwestt@gmail.com',
+                role: 'user'
+            };
+            
+            localStorage.setItem('currentUser', JSON.stringify(testUser));
+            
+            // Redirect to profile
+            window.location.href = 'pages/profile.html';
+        }
+
+        function testResults() {
+            const results = document.getElementById('results');
+            
+            // Test encoding
+            const testStrings = [
+                'Смачна Піцерія',
+                'Суші Майстер', 
+                'Італійський дворик',
+                'Філадельфія',
+                'Кур\'єр'
+            ];
+            
+            let html = '<div class="test-section"><h3>?? Результати тестування:</h3>';
+            
+            testStrings.forEach(str => {
+                const encoded = encodeURIComponent(str);
+                const decoded = decodeURIComponent(encoded);
+                const isCorrect = str === decoded;
+                
+                html += `
+                    <p>
+                        <strong>${str}</strong> 
+                        ${isCorrect ? '<span style="color: #28a745;">? OK</span>' : '<span style="color: #dc3545;">? Помилка кодування</span>'}
+                    </p>
+                `;
+            });
+            
+            // Test localStorage
+            try {
+                localStorage.setItem('test', 'Тест українського тексту');
+                const stored = localStorage.getItem('test');
+                localStorage.removeItem('test');
+                
+                html += `<p><strong>LocalStorage:</strong> ${stored === 'Тест українського тексту' ? '<span style="color: #28a745;">? OK</span>' : '<span style="color: #dc3545;">? Помилка</span>'}</p>`;
+            } catch (e) {
+                html += `<p><strong>LocalStorage:</strong> <span style="color: #dc3545;">? Недоступний</span></p>`;
+            }
+            
+            html += '</div>';
+            results.innerHTML = html;
+        }
+
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            console.log('?? Test page loaded');
+            console.log('? Ukrainian text should be visible');
+            
+            // Set a test user in localStorage for profile testing
+            if (!localStorage.getItem('currentUser')) {
+                const testUser = {
+                    id: 1,
+                    name: 'Daria',
+                    email: 'likekannievwestt@gmail.com',
+                    role: 'user'
+                };
+                localStorage.setItem('currentUser', JSON.stringify(testUser));
+                console.log('?? Test user set in localStorage');
+            }
+        });
+    </script>
+</body>
+</html>

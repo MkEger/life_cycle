@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Food Delivery</title>
+    <link rel="stylesheet" href="../styles-clean.css">
+    <style>
+        .order-filters select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: white;
+            color: #495057;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        
+        .empty-orders {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #6c757d;
+        }
+        
+        .empty-orders h3 {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        
+        .empty-orders p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #6c757d;
+            color: #6c757d;
+        }
+        
+        .btn-outline:hover {
+            background: #6c757d;
+            color: white;
+        }
+
+        /* Role-specific styles */
+        .courier-status, .restaurant-status {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-indicator {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .status-indicator.online {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-indicator.offline {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-indicator.open {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-indicator.closed {
+            background: #f5c6cb;
+            color: #721c24;
+        }
+
+        /* Delivery cards */
+        .delivery-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .delivery-card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .delivery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .delivery-status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .delivery-status.preparing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .delivery-status.ready {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .delivery-status.delivering {
+            background: #cce7ff;
+            color: #004085;
+        }
+
+        .delivery-info p {
+            margin: 0.5rem 0;
+            color: #495057;
+        }
+
+        .delivery-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Admin dashboard styles */
+        .admin-dashboard {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .admin-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Restaurant management styles */
+        .restaurant-management {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .management-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .management-section h3 {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .restaurant-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Profile avatar role-specific colors */
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .profile-avatar[data-role="admin"] {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+
+        .profile-avatar[data-role="courier"] {
+            background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+        }
+
+        .profile-avatar[data-role="manager"] {
+            background: linear-gradient(135deg, #26de81 0%, #20bf6b 100%);
+        }
+
+        .profile-avatar[data-role="vip"] {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+        }
+
+        /* Customer info for admin/courier */
+        .customer-info {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin: 0.5rem 0;
+        }
+
+        /* Enhanced order status colors */
+        .order-status.status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .order-status.status-preparing {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .order-status.status-ready {
+            background: #cce7ff;
+            color: #004085;
+        }
+
+        .order-status.status-delivering {
+            background: #e2e3ff;
+            color: #383d95;
+        }
+
+        .order-status.status-delivered {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .order-status.status-cancelled {
+            background: #f5c6cb;
+            color: #721c24;
+        }
+
+        /* Responsive design for role-specific elements */
+        @media (max-width: 768px) {
+            .admin-stats {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .admin-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .restaurant-stats {
+                flex-direction: column;
+            }
+            
+            .delivery-actions {
+                flex-direction: column;
+            }
+            
+            .courier-status, .restaurant-status {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" class="logo">Food Delivery</a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../dishes.html" class="nav-link">Order</a>
+                <a href="profile.html" class="nav-link active">Profile</a>
+                <span class="user-info" id="userInfo"></span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div class="profile-avatar" id="profileAvatar">??</div>
+                    <div class="profile-details">
+                        <h1 id="userName">Loading...</h1>
+                        <p id="userEmail">Loading...</p>
+                        <span class="user-role" id="userRole">Loading...</span>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-secondary" onclick="editProfile()">Edit Profile</button>
+                    <button class="btn btn-danger" onclick="logoutUser()">Logout</button>
+                </div>
+            </div>
+
+            <!-- Profile Tabs -->
+            <div class="profile-tabs">
+                <button class="tab-btn active" onclick="showTab('orders')">My Orders</button>
+                <button class="tab-btn" onclick="showTab('addresses')">Delivery Addresses</button>
+                <button class="tab-btn" onclick="showTab('settings')">Settings</button>
+                <button class="tab-btn" onclick="showTab('favorites')">Favorites</button>
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="ordersTab" class="tab-content active">
+                <div class="section-header">
+                    <h2>Order History</h2>
+                    <div class="order-filters">
+                        <select id="orderFilter" onchange="filterOrders()">
+                            <option value="">All orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="preparing">Preparing</option>
+                            <option value="delivering">On the way</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="ordersList" class="orders-list">
+                    <!-- Orders will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Addresses Tab -->
+            <div id="addressesTab" class="tab-content">
+                <div class="section-header">
+                    <h2>Saved Addresses</h2>
+                    <button class="btn btn-primary" onclick="addNewAddress()">Add Address</button>
+                </div>
+                
+                <div id="addressesList" class="addresses-list">
+                    <div class="address-card sample-address">
+                        <div class="address-icon">H</div>
+                        <div class="address-info">
+                            <h3>Home</h3>
+                            <p>10 Shevchenko St., Apt. 25</p>
+                            <p>Kyiv, 01001, Ukraine</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="address-card sample-address">
+                        <div class="address-icon">W</div>
+                        <div class="address-info">
+                            <h3>Work</h3>
+                            <p>50 Peremohy Ave., Office 101</p>
+                            <p>Kyiv, 01002, Ukraine</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="tab-content">
+                <div class="section-header">
+                    <h2>Account Settings</h2>
+                </div>
+
+                <form class="settings-form" onsubmit="updateSettings(event)">
+                    <div class="form-group">
+                        <label for="settingsName">Name</label>
+                        <input type="text" id="settingsName" name="name" value="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settingsPhone">Phone</label>
+                        <input type="tel" id="settingsPhone" name="phone" value="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settingsEmail">Email</label>
+                        <input type="email" id="settingsEmail" name="email" value="" required readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>Notifications</h3>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="emailNotifications" checked>
+                                Email notifications about orders
+                            </label>
+                            <label>
+                                <input type="checkbox" id="smsNotifications" checked>
+                                SMS notifications about delivery
+                            </label>
+                            <label>
+                                <input type="checkbox" id="promoNotifications">
+                                Promotional notifications
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+
+                <div class="danger-zone">
+                    <h3>Danger Zone</h3>
+                    <p>These actions are irreversible. Be careful!</p>
+                    <button class="btn btn-danger" onclick="deleteAccount()">Delete Account</button>
+                </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div id="favoritesTab" class="tab-content">
+                <div class="section-header">
+                    <h2>Favorite Dishes</h2>
+                </div>
+                
+                <div id="favoritesList" class="favorites-list">
+                    <p class="empty-state">
+                        You don't have any favorite dishes yet.<br>
+                        <a href="../dishes.html">Go to menu</a> to add some!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Container -->
+    <div id="notification" class="notification" style="display: none;"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        let currentUser = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('?? Ініціалізація профілю...');
+            
+            // Отримати поточного користувача з localStorage
+            const savedUser = localStorage.getItem('user');
+            if (savedUser) {
+                try {
+                    currentUser = JSON.parse(savedUser);
+                    console.log('? Користувач завантажений з localStorage:', currentUser);
+                } catch (e) {
+                    console.error('? Помилка парсингу користувача:', e);
+                    // Fallback до дефолтного користувача
+                    currentUser = {
+                        id: 999,
+                        name: 'Guest User',
+                        email: 'guest@example.com',
+                        role: 'user'
+                    };
+                }
+            } else {
+                console.warn('?? Користувач не знайдений у localStorage');
+                // Fallback до дефолтного користувача
+                currentUser = {
+                    id: 999,
+                    name: 'Guest User',
+                    email: 'guest@example.com',
+                    role: 'user'
+                };
+            }
+            
+            // URL параметри для ролі
+            const urlParams = new URLSearchParams(window.location.search);
+            const roleFromUrl = urlParams.get('role');
+            if (roleFromUrl && currentUser) {
+                currentUser.role = roleFromUrl;
+                console.log('?? Роль оновлена з URL:', roleFromUrl);
+            }
+            
+            console.log('?? Поточний користувач:', currentUser);
+            
+            updateUserInfo();
+            updateSettingsForm();
+            updateInterfaceByRole();
+            loadOrders();
+            addTestOrdersButton();
+            
+            console.log('? Profile loaded successfully');
+            console.log('?? User:', currentUser.name);
+            console.log('?? Role:', currentUser.role);
+            console.log('?? URL:', window.location.href);
+            
+            // Показати вітальне повідомлення
+            setTimeout(() => {
+                showNotification(`Welcome, ${currentUser.name}! Role: ${getRoleDisplayName(currentUser.role)}`, 'success');
+            }, 1000);
+        });
+
+        function updateUserInfo() {
+            console.log('?? Оновлення інформації користувача:', currentUser);
+            
+            const userInfo = document.getElementById('userInfo');
+            const userName = document.getElementById('userName');
+            const userEmail = document.getElementById('userEmail');
+            const userRole = document.getElementById('userRole');
+            const profileAvatar = document.getElementById('profileAvatar');
+            
+            // Перевірити чи всі елементи існують
+            if (!userName || !userEmail || !userRole) {
+                console.error('? Не знайдено елементи DOM для оновлення профілю');
+                return;
+            }
+            
+            // Оновити інформацію в профілі
+            userName.textContent = currentUser.name || 'Unknown User';
+            userEmail.textContent = currentUser.email || 'unknown@example.com';
+            userRole.textContent = getRoleDisplayName(currentUser.role || 'user');
+            userRole.className = `user-role ${currentUser.role}`;
+            
+            // Оновити навігацію
+            if (userInfo) {
+                userInfo.innerHTML = `
+                    <span class="user-greeting">${currentUser.name}</span>
+                    <a href="../index.html" class="nav-link">Back</a>
+                `;
+            }
+            
+            // Оновити аватар за ролем
+            if (profileAvatar) {
+                const roleIcons = {
+                    'admin': '?????',
+                    'manager': '?????', 
+                    'courier': '??',
+                    'vip': '?',
+                    'user': '??'
+                };
+                profileAvatar.textContent = roleIcons[currentUser.role] || '??';
+                profileAvatar.setAttribute('data-role', currentUser.role);
+                profileAvatar.style.fontSize = '2rem';
+            }
+            
+            console.log('? Інформацію користувача оновлено');
+        }
+
+        function updateSettingsForm() {
+            console.log('?? Оновлення форми налаштувань');
+            
+            const settingsName = document.getElementById('settingsName');
+            const settingsPhone = document.getElementById('settingsPhone');
+            const settingsEmail = document.getElementById('settingsEmail');
+            
+            if (settingsName) settingsName.value = currentUser.name || '';
+            if (settingsPhone) settingsPhone.value = currentUser.phone || '';
+            if (settingsEmail) settingsEmail.value = currentUser.email || '';
+            
+            console.log('? Форму налаштувань оновлено');
+        }
+
+        function updateInterfaceByRole() {
+            const role = currentUser.role;
+            
+            // Спочатку видалимо всі динамічно створені таби
+            const existingTabs = document.querySelectorAll('.tab-btn[data-dynamic="true"]');
+            existingTabs.forEach(tab => tab.remove());
+            
+            const existingTabContent = document.querySelectorAll('.tab-content[data-dynamic="true"]');
+            existingTabContent.forEach(content => content.remove());
+            
+            // Приховати/показати стандартні таби
+            const addressesTab = document.querySelector('[onclick="showTab(\'addresses\')"]');
+            const favoritesTab = document.querySelector('[onclick="showTab(\'favorites\')"]');
+            const settingsTab = document.querySelector('[onclick="showTab(\'settings\')"]');
+            
+            // За замовчуванням показати всі таби
+            if (addressesTab) addressesTab.style.display = 'block';
+            if (favoritesTab) favoritesTab.style.display = 'block';
+            if (settingsTab) settingsTab.style.display = 'block';
+            
+            if (role === 'courier') {
+                // Для кур'єра: приховати адреси та улюблені
+                if (addressesTab) addressesTab.style.display = 'none';
+                if (favoritesTab) favoritesTab.style.display = 'none';
+                updateTabForCourier();
+            } else if (role === 'admin') {
+                // Для адміністратора: додати простий адмін таб
+                updateTabForAdmin();
+            } else if (role === 'manager') {
+                // Для менеджера: додати управлення рестораном
+                updateTabForManager();
+            }
+            
+            // Оновити заголовок замовлень
+            const ordersHeader = document.querySelector('#ordersTab .section-header h2');
+            if (ordersHeader) {
+                const orderTitles = {
+                    'admin': 'All Orders Management',
+                    'manager': 'Restaurant Orders',
+                    'courier': 'Delivery Queue',
+                    'user': 'Order History',
+                    'vip': 'VIP Order History'
+                };
+                ordersHeader.textContent = orderTitles[role] || 'Order History';
+            }
+        }
+
+        function updateTabForCourier() {
+            // Перевірити чи таб вже існує
+            if (document.getElementById('activeDeliveriesTab')) {
+                console.log('Courier tab already exists');
+                return;
+            }
+            
+            const tabsContainer = document.querySelector('.profile-tabs');
+            
+            // Додати таб "Активні доставки"
+            const activeDeliveryBtn = document.createElement('button');
+            activeDeliveryBtn.className = 'tab-btn';
+            activeDeliveryBtn.setAttribute('data-dynamic', 'true');
+            activeDeliveryBtn.onclick = () => showTab('activeDeliveries');
+            activeDeliveryBtn.textContent = 'Active Deliveries';
+            tabsContainer.insertBefore(activeDeliveryBtn, tabsContainer.children[1]);
+            
+            // Створити простий контент для активних доставок
+            const activeDeliveriesTab = document.createElement('div');
+            activeDeliveriesTab.id = 'activeDeliveriesTab';
+            activeDeliveriesTab.className = 'tab-content';
+            activeDeliveriesTab.setAttribute('data-dynamic', 'true');
+            activeDeliveriesTab.innerHTML = `
+                <div class="section-header">
+                    <h2>?? Active Deliveries</h2>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; background: #d4edda; color: #155724;">?? Online</span>
+                    </div>
+                </div>
+                <div style="background: white; border: 1px solid #e9ecef; border-radius: 12px; padding: 1.5rem;">
+                    <h3>No active deliveries</h3>
+                    <p style="color: #6c757d;">Deliveries will appear here when assigned to you.</p>
+                </div>
+            `;
+            
+            document.querySelector('.container').appendChild(activeDeliveriesTab);
+            console.log('? Courier tab created successfully');
+        }
+
+        function updateTabForAdmin() {
+            const tabsContainer = document.querySelector('.profile-tabs');
+            
+            // Перевірити чи таб вже існує
+            if (document.getElementById('adminTab')) {
+                console.log('Admin tab already exists');
+                return;
+            }
+            
+            // Додати адмін таб
+            const adminBtn = document.createElement('button');
+            adminBtn.className = 'tab-btn';
+            adminBtn.setAttribute('data-dynamic', 'true');
+            adminBtn.onclick = () => showTab('admin');
+            adminBtn.textContent = 'Admin Panel';
+            tabsContainer.appendChild(adminBtn);
+            
+            // Створити простий адмін панель (без багатьох DOM елементів)
+            const adminTab = document.createElement('div');
+            adminTab.id = 'adminTab';
+            adminTab.className = 'tab-content';
+            adminTab.setAttribute('data-dynamic', 'true');
+            adminTab.innerHTML = `
+                <div class="section-header">
+                    <h2>????? Admin Panel</h2>
+                </div>
+                <div class="admin-dashboard">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.9;">?? Today's Orders</h3>
+                            <p style="font-size: 2rem; font-weight: bold; margin: 0;">127</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.9;">?? Active Users</h3>
+                            <p style="font-size: 2rem; font-weight: bold; margin: 0;">1,234</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.9;">?? Restaurants</h3>
+                            <p style="font-size: 2rem; font-weight: bold; margin: 0;">45</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <h3>?? Admin Actions</h3>
+                        <p style="color: #6c757d;">Admin panel features are being developed. Stay tuned!</p>
+                    </div>
+                </div>
+            `;
+            
+            document.querySelector('.container').appendChild(adminTab);
+            console.log('? Admin tab created successfully');
+        }
+
+        function updateTabForManager() {
+            // Перевірити чи таб вже існує
+            if (document.getElementById('restaurantTab')) {
+                console.log('Manager tab already exists');
+                return;
+            }
+            
+            const tabsContainer = document.querySelector('.profile-tabs');
+            
+            // Додати таб управління рестораном
+            const restaurantBtn = document.createElement('button');
+            restaurantBtn.className = 'tab-btn';
+            restaurantBtn.setAttribute('data-dynamic', 'true');
+            restaurantBtn.onclick = () => showTab('restaurant');
+            restaurantBtn.textContent = 'Restaurant Management';
+            tabsContainer.insertBefore(restaurantBtn, tabsContainer.children[1]);
+            
+            // Створити простий контент управління рестораном
+            const restaurantTab = document.createElement('div');
+            restaurantTab.id = 'restaurantTab';
+            restaurantTab.className = 'tab-content';
+            restaurantTab.setAttribute('data-dynamic', 'true');
+            restaurantTab.innerHTML = `
+                <div class="section-header">
+                    <h2>?? Restaurant Management</h2>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; background: #d1ecf1; color: #0c5460;">?? Open</span>
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 12px;">
+                    <h3>?? Menu Management</h3>
+                    <p style="color: #6c757d; margin-bottom: 1rem;">Manage your restaurant's menu and orders.</p>
+                    <div style="background: white; padding: 1rem; border-radius: 8px;">
+                        <strong>Today's Stats:</strong> Orders: 23 | Revenue: $456.78
+                    </div>
+                </div>
+            `;
+            
+            document.querySelector('.container').appendChild(restaurantTab);
+            console.log('? Manager tab created successfully');
+        }
+
+        // Функція getCurrentUser (якщо auth.js не завантажений)
+        function getCurrentUser() {
+            const userJSON = localStorage.getItem('user');
+            return userJSON ? JSON.parse(userJSON) : null;
+        }
+
+        function getRoleDisplayName(role) {
+            const roleNames = {
+                'admin': 'Administrator',
+                'manager': 'Restaurant Manager',
+                'courier': 'Delivery Courier',
+                'user': 'Customer',
+                'vip': 'VIP Customer'
+            };
+            return roleNames[role] || role;
+        }
+
+        function loadOrders() {
+            const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const ordersList = document.getElementById('ordersList');
+            
+            let filteredOrders = orders;
+            
+            // Фільтрувати замовлення за роллю
+            if (currentUser.role === 'manager' && currentUser.restaurant_id) {
+                filteredOrders = orders.filter(order => order.restaurantId === currentUser.restaurant_id);
+            } else if (currentUser.role === 'courier') {
+                // Показати всі замовлення в статусі доставки
+                filteredOrders = orders.filter(order => ['preparing', 'delivering'].includes(order.status));
+            } else if (currentUser.role !== 'admin') {
+                // Для звичайних користувачів - тільки їх замовлення
+                filteredOrders = orders.filter(order => order.userId === currentUser.id);
+            }
+            
+            if (filteredOrders.length === 0) {
+                const emptyMessages = {
+                    'admin': 'No orders in the system yet',
+                    'manager': 'No orders for your restaurant yet',
+                    'courier': 'No deliveries assigned yet',
+                    'user': 'No orders yet',
+                    'vip': 'No orders yet'
+                };
+                
+                const browseMessages = {
+                    'admin': 'Check back later for order management',
+                    'manager': 'Orders will appear here when customers order from your restaurant',
+                    'courier': 'Deliveries will appear here when ready',
+                    'user': "You haven't placed any orders yet. Start ordering your favorite dishes!",
+                    'vip': "You haven't placed any orders yet. Enjoy your VIP privileges!"
+                };
+                
+                ordersList.innerHTML = `
+                    <div class="empty-orders">
+                        <h3>${emptyMessages[currentUser.role]}</h3>
+                        <p>${browseMessages[currentUser.role]}</p>
+                        ${currentUser.role === 'user' || currentUser.role === 'vip' ? '<a href="../dishes.html" class="btn btn-primary">Browse Menu</a>' : ''}
+                    </div>
+                `;
+                return;
+            }
+            
+            // Сортувати замовлення за датою (найновіші першими)
+            filteredOrders.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            ordersList.innerHTML = filteredOrders.map(order => `
+                <div class="order-card" data-order-id="${order.id}">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <h3>${order.restaurant}</h3>
+                            <p class="order-date">${formatDate(order.date)}</p>
+                            ${currentUser.role === 'admin' || currentUser.role === 'courier' ? `<p class="customer-info">Customer: User #${order.userId}</p>` : ''}
+                        </div>
+                        <div class="order-status status-${order.status}">
+                            ${getStatusText(order.status)}
+                        </div>
+                    </div>
+                    <div class="order-items">
+                        <p><strong>Items:</strong> ${order.items.map(item => `${item.name} x${item.quantity}`).join(', ')}</p>
+                        <p class="order-total"><strong>Total: $${order.total.toFixed(2)}</strong></p>
+                    </div>
+                    <div class="order-actions">
+                        ${getOrderActionButtons(order)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getOrderActionButtons(order) {
+            const role = currentUser.role;
+            let buttons = [];
+            
+            // Кнопка деталей завжди доступна
+            buttons.push(`<button class="btn btn-secondary btn-sm" onclick="viewOrderDetails('${order.id}')">Details</button>`);
+            
+            if (role === 'admin') {
+                buttons.push(`<button class="btn btn-warning btn-sm" onclick="adminManageOrder('${order.id}')">Manage</button>`);
+                if (order.status === 'pending') {
+                    buttons.push(`<button class="btn btn-danger btn-sm" onclick="cancelOrder('${order.id}')">Cancel</button>`);
+                }
+            } else if (role === 'manager') {
+                if (order.status === 'pending') {
+                    buttons.push(`<button class="btn btn-success btn-sm" onclick="acceptOrder('${order.id}')">Accept</button>`);
+                }
+                if (order.status === 'preparing') {
+                    buttons.push(`<button class="btn btn-primary btn-sm" onclick="markOrderReady('${order.id}')">Mark Ready</button>`);
+                }
+            } else if (role === 'courier') {
+                if (order.status === 'preparing') {
+                    buttons.push(`<button class="btn btn-primary btn-sm" onclick="assignToSelf('${order.id}')">Take Delivery</button>`);
+                }
+                if (order.status === 'delivering') {
+                    buttons.push(`<button class="btn btn-success btn-sm" onclick="markDelivered('${order.id}')">Mark Delivered</button>`);
+                }
+            } else {
+                // Для користувачів
+                buttons.push(`<button class="btn btn-primary btn-sm" onclick="reorderItems('${order.id}')">Order Again</button>`);
+                if (order.status === 'pending') {
+                    buttons.push(`<button class="btn btn-danger btn-sm" onclick="cancelOrder('${order.id}')">Cancel</button>`);
+                }
+            }
+            
+            return buttons.join(' ');
+        }
+
+        // Додаткові функції для різних ролей
+        function acceptOrder(orderId) {
+            updateOrderStatus(orderId, 'preparing');
+            showNotification('Order accepted and moved to preparation', 'success');
+        }
+
+        function markOrderReady(orderId) {
+            updateOrderStatus(orderId, 'ready');
+            showNotification('Order marked as ready for delivery', 'success');
+        }
+
+        function assignToSelf(orderId) {
+            updateOrderStatus(orderId, 'delivering');
+            showNotification('Delivery assigned to you', 'success');
+        }
+
+        function markDelivered(orderId) {
+            updateOrderStatus(orderId, 'delivered');
+            showNotification('Order marked as delivered', 'success');
+        }
+
+        function updateOrderStatus(orderId, newStatus) {
+            let orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+            const orderIndex = orders.findIndex(o => o.id === orderId);
+            
+            if (orderIndex !== -1) {
+                orders[orderIndex].status = newStatus;
+                orders[orderIndex].updatedAt = new Date().toISOString();
+                localStorage.setItem('userOrders', JSON.stringify(orders));
+                loadOrders(); // Перезавантажити замовлення
+            }
+        }
+
+        function showTab(tabName) {
+            console.log('?? Переключення на таб:', tabName);
+            
+            try {
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Remove active class from buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Show selected tab
+                const selectedTab = document.getElementById(tabName + 'Tab');
+                if (selectedTab) {
+                    selectedTab.classList.add('active');
+                    console.log('? Таб показано:', tabName);
+                } else {
+                    console.error('? Таб не знайдено:', tabName + 'Tab');
+                }
+                
+                // Add active class to clicked button
+                if (event && event.target) {
+                    event.target.classList.add('active');
+                } else {
+                    // Fallback: знайти кнопку за текстом
+                    const buttons = document.querySelectorAll('.tab-btn');
+                    buttons.forEach(btn => {
+                        if (btn.textContent.toLowerCase().includes(tabName.toLowerCase())) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+
+                if (typeof showNotification === 'function') {
+                    showNotification(`Switched to ${getTabName(tabName)}`, 'info');
+                }
+            } catch (error) {
+                console.error('? Помилка переключення табу:', error);
+                if (typeof showNotification === 'function') {
+                    showNotification('Error switching tab: ' + error.message, 'error');
+                }
+            }
+        }
+
+        function editProfile() {
+            console.log('?? Редагування профілю...');
+            
+            try {
+                // Переключитися на таб налаштувань
+                showTab('settings');
+                
+                if (typeof showNotification === 'function') {
+                    showNotification('?? Використовуйте таб "Settings" для редагування профілю', 'info');
+                }
+            } catch (error) {
+                console.error('? Помилка редагування профілю:', error);
+                if (typeof showNotification === 'function') {
+                    showNotification('? Помилка редагування профілю', 'error');
+                } else {
+                    alert('Edit function will be available soon');
+                }
+            }
+        }
+
+        function deleteAccount() {
+            console.log('??? Спроба видалення акаунту...');
+            
+            try {
+                if (!currentUser) {
+                    throw new Error('Користувач не знайдений');
+                }
+                
+                const confirmFirst = confirm(`?? Ви впевнені, що хочете видалити акаунт "${currentUser.name}"?\n\nЦя дія є незворотною!`);
+                if (!confirmFirst) {
+                    console.log('? Видалення скасовано користувачем (перша перевірка)');
+                    return;
+                }
+                
+                const confirmSecond = confirm('?? ОСТАННЯ ПЕРЕВІРКА!\n\nВсі ваші дані будуть втрачені назавжди!\n\nПродовжити видалення?');
+                if (!confirmSecond) {
+                    console.log('? Видалення скасовано користувачем (друга перевірка)');
+                    return;
+                }
+                
+                // Видалити всі дані
+                localStorage.clear();
+                sessionStorage.clear();
+                
+                console.log('? Акаунт видалено');
+                
+                if (typeof showNotification === 'function') {
+                    showNotification('??? Акаунт видалено. Перенаправляємо...', 'success');
+                }
+                
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('? Помилка видалення акаунту:', error);
+                if (typeof showNotification === 'function') {
+                    showNotification('? Помилка видалення: ' + error.message, 'error');
+                } else {
+                    alert('Помилка видалення акаунту: ' + error.message);
+                }
+            }
+        }
+
+        function logoutUser() {
+            console.log('?? Вихід з системи...');
+            
+            try {
+                if (!currentUser) {
+                    throw new Error('Користувач вже не авторизований');
+                }
+                
+                const confirmLogout = confirm(`Вийти з акаунту "${currentUser.name}"?`);
+                if (!confirmLogout) {
+                    console.log('? Вихід скасовано користувачем');
+                    return;
+                }
+                
+                // Зберегти ім'я для повідомлення
+                const userName = currentUser.name;
+                
+                // Очистити дані авторизації
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+                
+                console.log('? Користувач вийшов з системи');
+                
+                if (typeof showNotification === 'function') {
+                    showNotification(`?? До побачення, ${userName}!`, 'info');
+                } else {
+                    alert(`До побачення, ${userName}!`);
+                }
+                
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('? Помилка виходу:', error);
+                if (typeof showNotification === 'function') {
+                    showNotification('? Помилка виходу: ' + error.message, 'error');
+                } else {
+                    alert('Помилка виходу: ' + error.message);
+                }
+                
+                // Примусовий вихід в разі помилки
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 1000);
+            }
+        }

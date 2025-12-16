@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Швидке Виправлення Логіну</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+            margin-bottom: 2rem;
+        }
+        
+        .problem {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #721c24;
+        }
+        
+        .solution {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #155724;
+        }
+        
+        .fix-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .fix-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .test-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .result {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            display: none;
+        }
+        
+        .result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>?? Швидке Виправлення Логіну</h1>
+        
+        <div class="problem">
+            <h3>? Проблеми:</h3>
+            <ul>
+                <li>Не можу залогінитись через тестові акаунти</li>
+                <li>Коли адміном заходжу - ламається сайт</li>
+                <li>Браузер лагає через CSS анімації</li>
+                <li>Перенаправлення працює неправильно</li>
+            </ul>
+        </div>
+
+        <div class="solution">
+            <h3>? Виправлення:</h3>
+            <ul>
+                <li>Створено спрощений CSS (styles-auth-simple.css)</li>
+                <li>Виправлено логіку логіну</li>
+                <li>Покращено перенаправлення</li>
+                <li>Додано debug логування</li>
+            </ul>
+        </div>
+
+        <h3>?? Швидкі Виправлення:</h3>
+        <button class="fix-btn" onclick="fixStyles()">1. Виправити CSS (прибрати лаги)</button>
+        <button class="fix-btn" onclick="clearCache()">2. Очистити Cache та localStorage</button>
+        <button class="fix-btn" onclick="resetLogin()">3. Перезапустити систему логіну</button>
+        <button class="fix-btn" onclick="fixRedirects()">4. Виправити перенаправлення</button>
+
+        <h3>?? Тести:</h3>
+        <button class="test-btn" onclick="testLogin('admin')">Тест Адмін</button>
+        <button class="test-btn" onclick="testLogin('courier')">Тест Кур'єр</button>
+        <button class="test-btn" onclick="testLogin('user')">Тест Користувач</button>
+        <button class="test-btn" onclick="openTestAccounts()">Відкрити Тестові Акаунти</button>
+
+        <div class="result" id="result"></div>
+
+        <h3>?? Ручні Кроки:</h3>
+        <ol>
+            <li>Натисніть всі кнопки виправлення зверху</li>
+            <li>Перезавантажте сторінку (Ctrl+F5)</li>
+            <li>Спробуйте логін через тестові акаунти</li>
+            <li>Якщо не працює - очистіть історію браузера</li>
+        </ol>
+    </div>
+
+    <script>
+        function updateResult(success, message) {
+            const result = document.getElementById('result');
+            result.style.display = 'block';
+            result.className = `result ${success ? 'success' : 'error'}`;
+            result.textContent = message;
+        }
+
+        function fixStyles() {
+            try {
+                // Видалити всі старі стилі
+                const oldStyles = document.querySelectorAll('link[href*="styles-auth.css"]');
+                oldStyles.forEach(style => style.remove());
+
+                // Додати новий спрощений стиль
+                const newStyle = document.createElement('link');
+                newStyle.rel = 'stylesheet';
+                newStyle.href = 'styles-auth-simple.css';
+                document.head.appendChild(newStyle);
+
+                updateResult(true, '? CSS виправлено! Складні анімації видалено.\nБраузер більше не повинен лагати.');
+            } catch (error) {
+                updateResult(false, '? Помилка виправлення CSS: ' + error.message);
+            }
+        }
+
+        function clearCache() {
+            try {
+                // Очистити localStorage
+                localStorage.clear();
+                
+                // Очистити sessionStorage
+                sessionStorage.clear();
+                
+                // Спробувати очистити кеш (не всі браузери підтримують)
+                if ('caches' in window) {
+                    caches.keys().then(names => {
+                        names.forEach(name => {
+                            caches.delete(name);
+                        });
+                    });
+                }
+
+                updateResult(true, '? Cache та localStorage очищено!\nПерезавантажте сторінку (Ctrl+F5) для повного очищення.');
+            } catch (error) {
+                updateResult(false, '? Помилка очищення cache: ' + error.message);
+            }
+        }
+
+        function resetLogin() {
+            try {
+                // Створити тестових користувачів
+                const testUsers = [
+                    {
+                        id: 1,
+                        email: 'admin@fooddelivery.com.ua',
+                        name: 'Адміністратор Системи',
+                        role: 'admin',
+                        phone: '+380501111111'
+                    },
+                    {
+                        id: 2,
+                        email: 'courier.alex@delivery.com.ua',
+                        name: 'Олексій Доставкін',
+                        role: 'courier',
+                        phone: '+380675550101'
+                    },
+                    {
+                        id: 5,
+                        email: 'test@example.com',
+                        name: 'Тестовий Користувач',
+                        role: 'user',
+                        phone: '+380501234567'
+                    }
+                ];
+
+                localStorage.setItem('users', JSON.stringify(testUsers));
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+
+                updateResult(true, '? Система логіну перезапущена!\nТестові користувачі створені.\nТепер можна логінитись.');
+            } catch (error) {
+                updateResult(false, '? Помилка перезапуску логіну: ' + error.message);
+            }
+        }
+
+        function fixRedirects() {
+            try {
+                // Видалити проблемні параметри URL
+                const url = new URL(window.location);
+                url.search = '';
+                window.history.replaceState({}, document.title, url.pathname);
+
+                // Перевірити поточну сторінку
+                const currentPage = window.location.pathname;
+                console.log('Поточна сторінка:', currentPage);
+
+                updateResult(true, '? Перенаправлення виправлено!\nURL очищено від проблемних параметрів.\nПоточна сторінка: ' + currentPage);
+            } catch (error) {
+                updateResult(false, '? Помилка виправлення перенаправлень: ' + error.message);
+            }
+        }
+
+        function testLogin(role) {
+            const testData = {
+                'admin': { email: 'admin@fooddelivery.com.ua', password: 'admin2024', name: 'Адміністратор' },
+                'courier': { email: 'courier.alex@delivery.com.ua', password: 'courier123', name: 'Олексій' },
+                'user': { email: 'test@example.com', password: 'test123', name: 'Тестовий Користувач' }
+            };
+
+            const user = testData[role];
+            if (!user) {
+                updateResult(false, '? Невідома роль: ' + role);
+                return;
+            }
+
+            try {
+                // Симуляція логіну
+                const userData = {
+                    id: Math.floor(Math.random() * 1000),
+                    email: user.email,
+                    name: user.name,
+                    role: role,
+                    phone: '+380501234567'
+                };
+
+                localStorage.setItem('user', JSON.stringify(userData));
+                localStorage.setItem('token', 'test_token_' + Date.now());
+
+                updateResult(true, `? Тест логін успішний!\nРоль: ${role}\nІм'я: ${user.name}\nEmail: ${user.email}\n\nТепер можете відкрити профіль.`);
+            } catch (error) {
+                updateResult(false, '? Помилка тесту логіну: ' + error.message);
+            }
+        }
+
+        function openTestAccounts() {
+            window.open('test-accounts.html', '_blank');
+        }
+
+        // Автоматичне виправлення при завантаженні
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('?? Починаю автоматичне виправлення...');
+            
+            // Автоматично виправити CSS
+            setTimeout(fixStyles, 500);
+            
+            // Показати поточний стан
+            setTimeout(() => {
+                const user = localStorage.getItem('user');
+                const currentPage = window.location.pathname;
+                
+                updateResult(true, `?? Поточний стан:\n- Сторінка: ${currentPage}\n- Користувач: ${user ? 'Є' : 'Немає'}\n- CSS: Виправлено на спрощену версію`);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

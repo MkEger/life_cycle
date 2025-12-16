@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?? Тест Відображення Користувача</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        
+        .result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .info {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>?? Тест Відображення Користувача</h1>
+        
+        <div class="info">
+            <h3>?? Проблема яку тестуємо:</h3>
+            <p>Коли логінишся як "Олексій", в профілі показувалось "Daria" замість правильного ім'я користувача.</p>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Крок 1: Тест Збереження Користувача</h2>
+            <button class="test-btn" onclick="testUserSave()">Тест Збереження Олексія</button>
+            <div class="result" id="result1"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Крок 2: Тест Завантаження Користувача</h2>
+            <button class="test-btn" onclick="testUserLoad()">Тест Завантаження з localStorage</button>
+            <div class="result" id="result2"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Крок 3: Тест Всіх Ролей</h2>
+            <button class="test-btn" onclick="testAllRoles()">Тест Адмін, Кур'єр, Менеджер, Користувач</button>
+            <div class="result" id="result3"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Крок 4: Тест Профілю</h2>
+            <div class="step">
+                <p><strong>Інструкції:</strong></p>
+                <ol>
+                    <li>Натисніть кнопку щоб залогінитись як Олексій</li>
+                    <li>Відкрийте профіль</li>
+                    <li>Перевірте чи показується "Олексій Доставкін", а не "Daria"</li>
+                </ol>
+            </div>
+            <button class="test-btn" onclick="loginAsAlex()">?? Логін як Олексій (Кур'єр)</button>
+            <button class="test-btn" onclick="loginAsAdmin()">????? Логін як Адмін</button>
+            <button class="test-btn" onclick="openProfile()">?? Відкрити Профіль</button>
+            <button class="test-btn" onclick="clearStorage()">??? Очистити Storage</button>
+            <div class="result" id="result4"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>?? Поточний Стан</h2>
+            <button class="test-btn" onclick="checkCurrentState()">Перевірити Поточний Стан</button>
+            <div class="result" id="currentState"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateResult(id, success, message) {
+            const result = document.getElementById(id);
+            result.style.display = 'block';
+            result.className = `result ${success ? 'success' : 'error'}`;
+            result.textContent = message;
+        }
+
+        function testUserSave() {
+            const alexUser = {
+                id: 2,
+                email: 'courier.alex@delivery.com.ua',
+                name: 'Олексій Доставкін',
+                role: 'courier',
+                phone: '+380675550101',
+                vehicle: 'Мотоцикл Honda'
+            };
+
+            try {
+                localStorage.setItem('user', JSON.stringify(alexUser));
+                localStorage.setItem('token', 'demo_token_' + Date.now());
+                
+                const saved = localStorage.getItem('user');
+                const parsedUser = JSON.parse(saved);
+                
+                if (parsedUser.name === 'Олексій Доставкін') {
+                    updateResult('result1', true, `? Успішно збережено користувача:\nІм'я: ${parsedUser.name}\nEmail: ${parsedUser.email}\nРоль: ${parsedUser.role}`);
+                } else {
+                    updateResult('result1', false, `? Помилка: збережено неправильне ім'я: ${parsedUser.name}`);
+                }
+            } catch (error) {
+                updateResult('result1', false, `? Помилка збереження: ${error.message}`);
+            }
+        }
+
+        function testUserLoad() {
+            try {
+                const saved = localStorage.getItem('user');
+                if (!saved) {
+                    updateResult('result2', false, '? Користувач не знайдений у localStorage');
+                    return;
+                }
+
+                const user = JSON.parse(saved);
+                const token = localStorage.getItem('token');
+
+                if (user && user.name && token) {
+                    updateResult('result2', true, `? Користувача завантажено:\nІм'я: ${user.name}\nEmail: ${user.email}\nРоль: ${user.role}\nТокен: ${token.substring(0, 20)}...`);
+                } else {
+                    updateResult('result2', false, `? Неповні дані користувача: ${JSON.stringify(user)}`);
+                }
+            } catch (error) {
+                updateResult('result2', false, `? Помилка завантаження: ${error.message}`);
+            }
+        }
+
+        function testAllRoles() {
+            const testUsers = [
+                { name: 'Адміністратор Системи', role: 'admin', email: 'admin@fooddelivery.com.ua' },
+                { name: 'Олексій Доставкін', role: 'courier', email: 'courier.alex@delivery.com.ua' },
+                { name: 'Менеджер Піцерії', role: 'manager', email: 'manager.pizza@restaurant.com.ua' },
+                { name: 'Тестовий Користувач', role: 'user', email: 'test@example.com' },
+                { name: 'Віктор Гурман', role: 'vip', email: 'vip.client@foodlover.com.ua' }
+            ];
+
+            let results = [];
+            let success = true;
+
+            testUsers.forEach((user, index) => {
+                try {
+                    localStorage.setItem('user', JSON.stringify({ ...user, id: index + 1 }));
+                    const saved = JSON.parse(localStorage.getItem('user'));
+                    
+                    if (saved.name === user.name && saved.role === user.role) {
+                        results.push(`? ${user.role}: ${user.name}`);
+                    } else {
+                        results.push(`? ${user.role}: очікувався ${user.name}, отримано ${saved.name}`);
+                        success = false;
+                    }
+                } catch (error) {
+                    results.push(`? ${user.role}: помилка ${error.message}`);
+                    success = false;
+                }
+            });
+
+            updateResult('result3', success, results.join('\n'));
+        }
+
+        function loginAsAlex() {
+            const alexUser = {
+                id: 2,
+                email: 'courier.alex@delivery.com.ua',
+                name: 'Олексій Доставкін',
+                role: 'courier',
+                phone: '+380675550101',
+                vehicle: 'Мотоцикл Honda'
+            };
+
+            localStorage.setItem('user', JSON.stringify(alexUser));
+            localStorage.setItem('token', 'demo_token_' + Date.now());
+            
+            updateResult('result4', true, `? Залогінено як ${alexUser.name}\nТепер відкрийте профіль і перевірте чи показується правильне ім'я`);
+        }
+
+        function loginAsAdmin() {
+            const adminUser = {
+                id: 1,
+                email: 'admin@fooddelivery.com.ua',
+                name: 'Адміністратор Системи',
+                role: 'admin',
+                phone: '+380501111111'
+            };
+
+            localStorage.setItem('user', JSON.stringify(adminUser));
+            localStorage.setItem('token', 'demo_token_' + Date.now());
+            
+            updateResult('result4', true, `? Залогінено як ${adminUser.name}\nТепер відкрийте профіль і перевірте чи показується правильне ім'я`);
+        }
+
+        function openProfile() {
+            window.open('pages/profile-english.html', '_blank');
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            updateResult('result4', true, '??? localStorage очищено');
+        }
+
+        function checkCurrentState() {
+            const user = localStorage.getItem('user');
+            const token = localStorage.getItem('token');
+
+            if (user) {
+                try {
+                    const userData = JSON.parse(user);
+                    updateResult('currentState', true, `?? Поточний користувач:\nІм'я: ${userData.name}\nEmail: ${userData.email}\nРоль: ${userData.role}\nТокен: ${token ? 'Присутній' : 'Відсутній'}`);
+                } catch (error) {
+                    updateResult('currentState', false, `? Помилка парсингу користувача: ${error.message}`);
+                }
+            } else {
+                updateResult('currentState', false, '? Користувач не залогінений');
+            }
+        }
+
+        // Автоматична перевірка при завантаженні
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(checkCurrentState, 500);
+        });
+    </script>
+</body>
+</html>
